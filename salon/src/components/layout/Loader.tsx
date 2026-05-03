@@ -30,7 +30,6 @@ export function Loader() {
 
   return (
     <>
-      {/* Inject keyframes */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Jost:wght@200;300&display=swap');
 
@@ -39,9 +38,9 @@ export function Loader() {
           60%  { opacity: 1; transform: translateX(-50%) translateY(-56px) scale(1.1); }
           100% { opacity: 0.85; transform: translateX(-50%) translateY(-52px) scale(1); }
         }
-        @keyframes orbPulse {
-          0%,100% { transform: translate(-50%,-50%) scale(1); box-shadow: 0 0 24px 6px rgba(232,121,160,0.4); }
-          50%      { transform: translate(-50%,-50%) scale(1.15); box-shadow: 0 0 40px 12px rgba(232,121,160,0.65); }
+        @keyframes heartPulse {
+          0%,100% { transform: translate(-50%, -50%) scale(1);    filter: drop-shadow(0 0 8px rgba(232,121,160,0.6)) drop-shadow(0 0 18px rgba(192,38,211,0.3)); }
+          50%      { transform: translate(-50%, -50%) scale(1.22); filter: drop-shadow(0 0 16px rgba(232,121,160,0.9)) drop-shadow(0 0 32px rgba(192,38,211,0.55)); }
         }
         @keyframes spinRing {
           to { transform: translate(-50%,-50%) rotate(360deg); }
@@ -150,17 +149,34 @@ export function Loader() {
             }}
           />
 
-          {/* Centre orb */}
+          {/* Centre Heart ❤️ */}
           <div
-            className="absolute rounded-full"
+            className="absolute"
             style={{
-              width: 36, height: 36,
-              top: '50%', left: '50%',
-              background: 'radial-gradient(circle at 35% 35%,#fde8f3,#e879a0 60%,#c026d3)',
-              boxShadow: '0 0 24px 6px rgba(232,121,160,0.45),0 0 8px 2px rgba(192,38,211,0.25)',
-              animation: 'orbPulse 1.6s ease-in-out infinite',
+              top: '50%',
+              left: '50%',
+              animation: 'heartPulse 1.6s ease-in-out infinite',
             }}
-          />
+          >
+            <svg
+              width="40"
+              height="36"
+              viewBox="0 0 40 36"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <radialGradient id="heartGrad" cx="35%" cy="30%" r="65%">
+                  <stop offset="0%"   stopColor="#fde8f3" />
+                  <stop offset="50%"  stopColor="#e879a0" />
+                  <stop offset="100%" stopColor="#c026d3" />
+                </radialGradient>
+              </defs>
+              <path
+                d="M20 33 C20 33 2 21 2 11 C2 6 6 2 11 2 C14.5 2 17.5 3.8 20 7 C22.5 3.8 25.5 2 29 2 C34 2 38 6 38 11 C38 21 20 33 20 33Z"
+                fill="url(#heartGrad)"
+              />
+            </svg>
+          </div>
         </div>
 
         {/* Salon name */}
