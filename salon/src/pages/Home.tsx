@@ -7,6 +7,7 @@ import { TestimonialsSlider } from '../components/sections/TestimonialsSlider';
 import { HeroSection } from '../components/sections/Herosection';
 import { SERVICES, STATS } from '../utils/data';
 import '../styles/index.css';
+import second from '../assets/basenod.png'
 
 const FEATURED_SERVICES = SERVICES.slice(0, 4);
 
@@ -17,7 +18,7 @@ const TRANSFORMATIONS = [
     subtitle: 'Balayage + Cut + Style',
   },
   {
-    image: '/images/transformations/facial.jpg',
+    image: second,
     title: 'Glow Facial',
     subtitle: 'Deep Cleanse + Hydration',
   },
