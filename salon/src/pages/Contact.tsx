@@ -117,31 +117,19 @@ export default function Contact() {
               </div>
             ))}
 
-            {/* Map Placeholder */}
-            <div
-              className="rounded-[20px] h-[200px] flex items-center justify-center border border-rose-soft/20"
-              style={{ background: 'linear-gradient(160deg,#f0e8f8,#f8e0ee)' }}
-            >
-              <div className="text-center text-salon-muted">
-                <div className="text-[32px] mb-2">📍</div>
-                <p className="text-[13px] font-medium">12 Rose Garden Lane, Raipur</p>
+            {/* Google Map */}
+            <div className="rounded-[20px] overflow-hidden border border-rose-soft/20 shadow-[0_4px_20px_rgba(232,125,170,0.08)]" style={{ height: '220px' }}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.5!2d81.0198356!3d21.0892391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a2945926e889bd1:0x4801e5671ac97b20!2sRashmi+Beauty+Salon+%26+Academy!5e0!3m2!1sen!2sin!4v1"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                              loading="lazy"
+                              referrerPolicy="no-referrer-when-downgrade"
+                              title="Rashmi Beauty Salon & Academy"
+                            />
               </div>
-            </div>
-
-            {/* Social Links */}
-            <div>
-              <p className="text-[13px] font-semibold text-salon-text mb-3">Follow & Chat With Us</p>
-              <div className="flex gap-3">
-                {['📸', '🦋', '▶️'].map(icon => (
-                  <button
-                    key={icon}
-                    className="w-[42px] h-[42px] rounded-full border-[1.5px] border-rose-deep/30 bg-white flex items-center justify-center text-base cursor-pointer transition-all duration-300 hover:bg-gradient-to-br hover:from-rose-deep hover:to-rose-darker hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(232,125,170,0.35)]"
-                  >
-                    {icon}
-                  </button>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>

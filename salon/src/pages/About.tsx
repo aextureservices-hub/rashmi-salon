@@ -17,7 +17,7 @@ export default function About() {
             Where Passion Meets Artistry 🌸
           </h1>
           <p className="text-base text-salon-muted leading-relaxed max-w-[600px]">
-            Founded in 2018, Lumina Beauty Studio was born from a simple belief — every woman deserves to feel extraordinary.
+            Founded in 2018, Rashmi Beauty Salon & Spa was born from a simple belief — every woman deserves to feel extraordinary.
           </p>
         </div>
       </div>

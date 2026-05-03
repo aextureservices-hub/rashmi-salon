@@ -20,10 +20,10 @@ export const NAV_LINKS: NavLink[] = [
 
 // ─── Stats ─────────────────────────────────────────────────────────────────────
 export const STATS: Stat[] = [
-  { id: 'clients', target: 2400, suffix: 'K+', label: 'Happy Clients' },
-  { id: 'services', target: 40, suffix: '+', label: 'Services Offered' },
-  { id: 'artists', target: 12, suffix: '+', label: 'Expert Artists' },
-  { id: 'years', target: 6, suffix: '+', label: 'Years of Glam' },
+  { id: 'clients', target: 2400, suffix: '+', label: 'Happy Clients' },
+  { id: 'services', target: 75, suffix: '+', label: 'Services Offered' },
+  { id: 'artists', target: 6, suffix: '+', label: 'Expert Artists' },
+  { id: 'years', target: 9, suffix: '+', label: 'Years of Glam' },
 ];
 
 // ─── Services ──────────────────────────────────────────────────────────────────
@@ -203,10 +203,6 @@ export const TESTIMONIALS: Testimonial[] = [
 export const TEAM_MEMBERS: TeamMember[] = [
   { id: 'tm1', name: 'Aishwarya Rao', role: 'Founder & Creative Director', avatar: '👩‍🎨', bio: '15+ years crafting beauty experiences across India\'s top salons.' },
   { id: 'tm2', name: 'Meera Pillai', role: 'Master Hair Stylist', avatar: '💇‍♀️', bio: 'Certified in advanced coloring techniques and keratin treatments.' },
-  { id: 'tm3', name: 'Divya Nair', role: 'Skincare Specialist', avatar: '✨', bio: 'Expert in holistic skincare and anti-aging facial treatments.' },
-  { id: 'tm4', name: 'Kavitha Iyer', role: 'Makeup Artist', avatar: '💄', bio: 'Bridal specialist with 500+ weddings beautifully transformed.' },
-  { id: 'tm5', name: 'Kavya Reddy', role: 'Nail Art Expert', avatar: '💅', bio: 'Award-winning nail artist known for intricate, detailed designs.' },
-  { id: 'tm6', name: 'Sunita Verma', role: 'Wellness Therapist', avatar: '🌺', bio: 'Specializes in relaxation therapies and aromatherapy treatments.' },
 ];
 
 // ─── Values ────────────────────────────────────────────────────────────────────
@@ -218,7 +214,7 @@ export const VALUES: Value[] = [
 
 // ─── Contact Info ──────────────────────────────────────────────────────────────
 export const CONTACT_INFO: ContactInfo[] = [
-  { icon: '📍', label: 'Our Location', value: '12 Rose Garden Lane, Civil Lines\nRaipur, CG 492001' },
+  { icon: '📍', label: 'Our Location', value: 'Kavita Complex, Kamla College Road\nRajnandgaon, CG 491441' },
   { icon: '📞', label: 'Call Us', value: '+91 98765 43210' },
   { icon: '✉️', label: 'Email Us', value: 'hello@luminabeauty.in' },
   { icon: '🕐', label: 'Working Hours', value: 'Mon–Sat: 9:00 AM – 8:00 PM\nSunday: 10:00 AM – 6:00 PM' },

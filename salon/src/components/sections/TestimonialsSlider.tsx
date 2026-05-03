@@ -297,39 +297,6 @@ export function TestimonialsSlider() {
             →
           </button>
         </div>
-
-        {/* ── Summary strip ── */}
-        <div
-          className="mt-8 rounded-2xl px-6 py-4 flex items-center justify-center gap-8 flex-wrap"
-          style={{
-            background: 'linear-gradient(135deg,rgba(249,204,224,0.35),rgba(232,202,245,0.35))',
-            border: '1px solid rgba(176,112,144,0.15)',
-          }}
-        >
-          <div className="flex items-center gap-2.5">
-            <span style={{ fontSize: '22px' }}>⭐</span>
-            <div>
-              <p className="text-sm font-semibold" style={{ color: '#2d1b2e', fontFamily: "'Cormorant Garamond', serif", fontSize: '16px' }}>4.9 / 5.0</p>
-              <p className="text-[11px] tracking-wide uppercase" style={{ color: '#9d4c6f', fontFamily: "'Jost', sans-serif" }}>Average Rating</p>
-            </div>
-          </div>
-          <div style={{ width: '1px', height: '32px', background: 'rgba(176,112,144,0.25)' }} />
-          <div className="flex items-center gap-2.5">
-            <span style={{ fontSize: '22px' }}>💬</span>
-            <div>
-              <p className="text-sm font-semibold" style={{ color: '#2d1b2e', fontFamily: "'Cormorant Garamond', serif", fontSize: '16px' }}>2,400+</p>
-              <p className="text-[11px] tracking-wide uppercase" style={{ color: '#9d4c6f', fontFamily: "'Jost', sans-serif" }}>Happy Clients</p>
-            </div>
-          </div>
-          <div style={{ width: '1px', height: '32px', background: 'rgba(176,112,144,0.25)' }} />
-          <div className="flex items-center gap-2.5">
-            <span style={{ fontSize: '22px' }}>🏆</span>
-            <div>
-              <p className="text-sm font-semibold" style={{ color: '#2d1b2e', fontFamily: "'Cormorant Garamond', serif", fontSize: '16px' }}>#1 Rated</p>
-              <p className="text-[11px] tracking-wide uppercase" style={{ color: '#9d4c6f', fontFamily: "'Jost', sans-serif" }}>Salon in City</p>
-            </div>
-          </div>
-        </div>
       </div>
     </>
   );

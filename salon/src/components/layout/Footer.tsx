@@ -17,7 +17,7 @@ export function Footer() {
   const navigate = useNavigate();
 
   const handleWhatsApp = () => {
-    const msg = encodeURIComponent("Hi! I'd like to connect with Lumina Beauty Studio 🌸");
+    const msg = encodeURIComponent("Hi! I'd like to connect with Rashmi Beauty Salon & Spa 🌸");
     openWhatsApp(msg, SALON_WHATSAPP);
   };
 
@@ -28,14 +28,34 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link to="/" className="block font-display text-[26px] font-bold bg-gradient-to-br from-rose-soft to-purple-300 bg-clip-text text-transparent mb-3">
-              ✦ Lumina
+              RB
             </Link>
             <p className="text-sm text-white/55 leading-relaxed">
-              Where beauty meets artistry. Experience premium salon services crafted with passion and expertise.
+              Where beauty meets Confidence. Experience premium salon services crafted with passion and expertise.
             </p>
             <div className="flex gap-3 mt-5">
-              <button className="w-[42px] h-[42px] rounded-full border border-white/15 bg-transparent flex items-center justify-center text-base cursor-pointer hover:bg-rose-deep/20 transition-colors">📸</button>
-              <button className="w-[42px] h-[42px] rounded-full border border-white/15 bg-transparent flex items-center justify-center text-base cursor-pointer hover:bg-rose-deep/20 transition-colors">🦋</button>
+             <a href="https://www.instagram.com/rashmi_salon_26?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-[42px] h-[42px] rounded-full border border-white/15 bg-transparent flex items-center justify-center cursor-pointer hover:bg-rose-deep/20 transition-colors"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                </svg>
+              </a>
+
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-[42px] h-[42px] rounded-full border border-white/15 bg-transparent flex items-center justify-center cursor-pointer hover:bg-rose-deep/20 transition-colors"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+              </a>
               <button
                 onClick={handleWhatsApp}
                 className="w-[42px] h-[42px] rounded-full border border-wa-green/40 bg-wa-green/15 flex items-center justify-center cursor-pointer hover:bg-wa-green/30 transition-colors text-wa-green"
@@ -85,12 +105,12 @@ export function Footer() {
                 <li key={h} className="text-white/50 text-sm">{h}</li>
               ))}
             </ul>
-            <p className="mt-4 text-xs text-white/40">📍 Civil Lines, Raipur</p>
+            <p className="mt-4 text-xs text-white/40">📍 Kavita Complex Kamla College Road Rajnandgaon</p>
           </div>
         </div>
 
         <div className="border-t border-white/10 pt-5 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-[13px] text-white/40">© 2026 Lumina Beauty Studio. Made with 🌸 in Raipur</p>
+          <p className="text-[13px] text-white/40">© 2026 Rashmi Beauty Salon & Spa. Made with 🌸 in Rajnandgaon</p>
           <p className="text-xs text-white/30">Privacy · Terms</p>
         </div>
       </div>
