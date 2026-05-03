@@ -15,7 +15,7 @@ function PageLoader() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#FFF0F8] to-[#F5EEFF]">
       <div className="text-center">
         <div className="font-display text-3xl font-bold bg-gradient-to-br from-rose-deep to-purple-500 bg-clip-text text-transparent animate-shimmer mb-3">
-          ✦ Lumina
+          RB
         </div>
         <div className="w-32 h-0.5 bg-rose-deep/20 rounded-full overflow-hidden mx-auto">
           <div className="h-full bg-gradient-to-r from-rose-deep to-lavender rounded-full animate-[loadProgress_1s_ease_infinite]" />
