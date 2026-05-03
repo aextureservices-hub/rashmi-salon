@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import image1 from "../../assets/image1.jpg"
+import image2 from '../../assets/bride.webp'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface Slide {
@@ -32,7 +33,7 @@ const SLIDES: Slide[] = [
     badge: '🏆 #1 Salon in City',
   },
   {
-    img: 'https://lh3.googleusercontent.com/p/AF1QipMlB8c0PWPbI0QnyME-bMNYemNzlkxnX5KTzXF3=s1360-w1360-h1020-rw',
+    img: image2,
     gradient: 'linear-gradient(135deg,#cad5f9 0%,#e8caf5 50%,#f9cce0 100%)',
     eyebrow: 'Expert Hair & Styling',
     headline: ['Transform', 'Your Look'],
