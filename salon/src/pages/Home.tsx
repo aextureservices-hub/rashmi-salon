@@ -60,7 +60,9 @@ export default function Home() {
 
        {/* ─── Stats ───────────────────────────────────────────────────────── */}
       <FadeIn>
-        <section className="py-16 bg-white border-t border-rose-soft/15">
+        <section className="py-16  border-t border-rose-soft/15"
+        style={{ background: 'linear-gradient(135deg,#F5EEFF,#FFF0F8)' }}
+        >
           <div className="max-w-[900px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 px-[5%]">
             {STATS.map(stat => (
               <StatCounter key={stat.id} stat={stat} />
@@ -83,7 +85,7 @@ export default function Home() {
 
       {/* ─── Transformations ─────────────────────────────────────────────── */}
       <FadeIn>
-        <section className="py-20 px-[5%] bg-white">
+        <section className="py-20 px-[5%] ">
           <div className="max-w-[1200px] mx-auto">
             <SectionHeader
               tag="Transformations"

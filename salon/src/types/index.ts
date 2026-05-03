@@ -18,7 +18,7 @@ export type GalleryCategory = 'hair' | 'makeup' | 'nails';
 export interface GalleryItem {
   id: string;
   category: GalleryCategory;
-  icon: string;
+  image: string;
   gradient: string;
   label: string;
   tall?: boolean;

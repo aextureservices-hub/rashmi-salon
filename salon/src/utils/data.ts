@@ -9,6 +9,16 @@ import type {
   ContactInfo,
 } from '../types';
 
+import image1 from '../assets/image1.jpg'
+import image2 from '../assets/bride2.jpeg'
+import image3 from '../assets/bride.jpg'
+import image4 from '../assets/image1.jpg'
+import image5 from '../assets/bride2.jpeg'
+import image6 from '../assets/bride.jpg'
+import image7 from '../assets/image1.jpg'
+import image8 from '../assets/bride2.jpeg'
+import image9 from '../assets/bride.jpg'
+
 // ─── Navigation ────────────────────────────────────────────────────────────────
 export const NAV_LINKS: NavLink[] = [
   { label: 'Home', path: '/' },
@@ -152,15 +162,15 @@ export const SERVICES: Service[] = [
 
 // ─── Gallery ───────────────────────────────────────────────────────────────────
 export const GALLERY_ITEMS: GalleryItem[] = [
-  { id: 'g1', category: 'hair', icon: '💇‍♀️', gradient: 'linear-gradient(160deg,#F9D5E5,#EDD5F9)', label: 'Balayage', tall: true },
-  { id: 'g2', category: 'makeup', icon: '💄', gradient: 'linear-gradient(160deg,#FFE0C4,#F9D5E5)', label: 'Bridal Glow' },
-  { id: 'g3', category: 'nails', icon: '💅', gradient: 'linear-gradient(160deg,#EDD5F9,#D5E8FF)', label: 'Nail Art' },
-  { id: 'g4', category: 'hair', icon: '✨', gradient: 'linear-gradient(160deg,#D5F9E8,#D5E8FF)', label: 'Hair Color' },
-  { id: 'g5', category: 'makeup', icon: '👰', gradient: 'linear-gradient(160deg,#FFD5E8,#FFD5B8)', label: 'Party Look', tall: true },
-  { id: 'g6', category: 'nails', icon: '🎨', gradient: 'linear-gradient(160deg,#B8D5FF,#D5B8FF)', label: 'Gel Art' },
-  { id: 'g7', category: 'hair', icon: '💆‍♀️', gradient: 'linear-gradient(160deg,#FFE8D5,#FFD5E8)', label: 'Keratin' },
-  { id: 'g8', category: 'makeup', icon: '😍', gradient: 'linear-gradient(160deg,#D5FFE8,#D5E8FF)', label: 'Evening Glam' },
-  { id: 'g9', category: 'nails', icon: '💎', gradient: 'linear-gradient(160deg,#E8D5FF,#FFD5E8)', label: 'Chrome Nails' },
+  { id: 'g1', category: 'hair', image: image1, gradient: 'linear-gradient(160deg,#F9D5E5,#EDD5F9)', label: 'Balayage', tall: true },
+  { id: 'g2', category: 'makeup', image: image2, gradient: 'linear-gradient(160deg,#FFE0C4,#F9D5E5)', label: 'Bridal Glow' },
+  { id: 'g3', category: 'nails', image: image3, gradient: 'linear-gradient(160deg,#EDD5F9,#D5E8FF)', label: 'Nail Art' },
+  { id: 'g4', category: 'hair', image: image4, gradient: 'linear-gradient(160deg,#D5F9E8,#D5E8FF)', label: 'Hair Color' },
+  { id: 'g5', category: 'makeup', image: image5, gradient: 'linear-gradient(160deg,#FFD5E8,#FFD5B8)', label: 'Party Look', tall: true },
+  { id: 'g6', category: 'nails', image: image6, gradient: 'linear-gradient(160deg,#B8D5FF,#D5B8FF)', label: 'Gel Art' },
+  { id: 'g7', category: 'hair', image: image7, gradient: 'linear-gradient(160deg,#FFE8D5,#FFD5E8)', label: 'Keratin' },
+  { id: 'g8', category: 'makeup', image: image8, gradient: 'linear-gradient(160deg,#D5FFE8,#D5E8FF)', label: 'Evening Glam' },
+  { id: 'g9', category: 'nails', image: image9, gradient: 'linear-gradient(160deg,#E8D5FF,#FFD5E8)', label: 'Chrome Nails' },
 ];
 
 // ─── Testimonials ──────────────────────────────────────────────────────────────

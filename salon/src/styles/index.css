@@ -1711,3 +1711,85 @@
   }
   html { scroll-behavior: auto; }
 }
+
+.g-wrap { padding: 1.5rem 0; font-family: 'Montserrat', sans-serif; }
+
+.g-head { text-align: center; margin-bottom: 1.5rem; padding: 0 1rem; }
+.g-head h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 2rem;
+  letter-spacing: 0.07em;
+  line-height: 1.2;
+}
+.g-head p {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin-top: 6px;
+}
+
+/* 2-column grid — safe on all phone widths */
+.g-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.g-card {
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22,1,0.36,1);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.g-card.tall { grid-row: span 2; }
+.g-card.visible { opacity: 1; transform: translateY(0); }
+
+.g-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: 150px;
+  transition: transform 0.5s ease;
+}
+.g-card:active img { transform: scale(1.04); }
+
+.g-placeholder { width: 100%; min-height: 150px; height: 100%; display: none; }
+
+.g-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 28px 12px 12px;
+  background: linear-gradient(to top, rgba(40,15,28,0.88) 0%, transparent 100%);
+}
+.g-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #fff;
+  display: block;
+}
+.g-tag {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  display: block;
+  margin-top: 3px;
+}
+
+.g-tap-hint {
+  text-align: center;
+  font-size: 11px;
+  opacity: 0.45;
+  letter-spacing: 0.08em;
+  padding: 14px 0 4px;
+}

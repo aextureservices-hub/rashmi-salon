@@ -1,70 +1,63 @@
-import { useState } from 'react';
+// src/components/gallery/GalleryGrid.tsx
+import { useEffect, useRef } from 'react';
 import { GALLERY_ITEMS } from '../../utils/data';
-import { cn } from '../../utils/helpers';
-import type { GalleryCategory, GalleryItem } from '../../types';
-import '../../styles/index.css'
+import type { GalleryItem } from '../../types';
 
-const FILTER_TABS: { label: string; value: 'all' | GalleryCategory }[] = [
-  { label: 'All', value: 'all' },
-  { label: 'Hair', value: 'hair' },
-  { label: 'Makeup', value: 'makeup' },
-  { label: 'Nails', value: 'nails' },
-];
+function GalleryCard({ item, index }: { item: GalleryItem; index: number }) {
+  const cardRef = useRef<HTMLDivElement>(null);
 
-function GalleryCard({ item }: { item: GalleryItem }) {
+  useEffect(() => {
+    const el = cardRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => el.classList.add('visible'), index * 60);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.05 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [index]);
+
   return (
-    <div
-      className={cn(
-        'rounded-[20px] overflow-hidden cursor-pointer relative group transition-all duration-400',
-        'hover:scale-[1.03] hover:shadow-[0_15px_40px_rgba(232,125,170,0.25)]',
-        item.tall && 'row-span-2'
-      )}
-    >
+    <div ref={cardRef} className={`g-card${item.tall ? ' tall' : ''}`}>
       <div
-        className="gallery-ph flex items-center justify-center text-[40px]"
-        style={{
-          background: item.gradient,
-          height: item.tall ? '220px' : '160px',
+        className="g-placeholder"
+        style={{ background: item.gradient ?? '#fde8f3' }}
+      />
+      <img
+        src={item.image}
+        alt={item.label}
+        loading="lazy"
+        style={{ minHeight: item.tall ? '310px' : '150px' }}
+        onError={(e) => {
+          const img = e.currentTarget;
+          img.style.display = 'none';
+          const ph = img.previousElementSibling as HTMLElement;
+          if (ph) { ph.style.display = 'block'; ph.style.minHeight = img.style.minHeight; }
         }}
-      >
-        {item.icon}
-      </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(61,37,53,0.8)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-        <span className="text-white text-[13px] font-medium font-display">{item.label}</span>
+      />
+      <div className="g-overlay">
+        <span className="g-label">{item.label}</span>
+        <span className="g-tag">{item.category}</span>
       </div>
     </div>
   );
 }
 
 export function GalleryGrid() {
-  const [filter, setFilter] = useState<'all' | GalleryCategory>('all');
-
-  const filtered = filter === 'all' ? GALLERY_ITEMS : GALLERY_ITEMS.filter(g => g.category === filter);
-
   return (
-    <div>
-      {/* Filter Tabs */}
-      <div className="flex gap-3 flex-wrap mb-10 justify-center">
-        {FILTER_TABS.map(tab => (
-          <button
-            key={tab.value}
-            onClick={() => setFilter(tab.value)}
-            className={cn(
-              'px-6 py-2.5 rounded-full border-[1.5px] text-sm font-medium cursor-pointer transition-all duration-300',
-              filter === tab.value
-                ? 'bg-gradient-to-br from-rose-deep to-rose-darker text-white border-transparent shadow-[0_4px_18px_rgba(232,125,170,0.35)] -translate-y-0.5'
-                : 'bg-white text-salon-muted border-rose-deep/30 hover:bg-gradient-to-br hover:from-rose-deep hover:to-rose-darker hover:text-white hover:border-transparent'
-            )}
-          >
-            {tab.label}
-          </button>
-        ))}
+    <div className="g-wrap">
+      <div className="g-head">
+        <h2>Our Gallery</h2>
+        <p>crafted with care · every look a story</p>
       </div>
-
-      {/* Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4" style={{ gridAutoRows: 'auto' }}>
-        {filtered.map(item => (
-          <GalleryCard key={item.id} item={item} />
+      <div className="g-grid">
+        {GALLERY_ITEMS.map((item, i) => (
+          <GalleryCard key={item.id} item={item} index={i} />
         ))}
       </div>
     </div>

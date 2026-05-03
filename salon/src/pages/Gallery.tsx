@@ -20,7 +20,7 @@ export default function Gallery() {
       </div>
 
       {/* Gallery Section */}
-      <section className="py-16 px-[5%] bg-white">
+     <section className="py-16 px-[5%] bg-gradient-to-br from-[#FFF0F8] to-[#F5EEFF]">
         <div className="max-w-[1200px] mx-auto">
           <GalleryGrid />
         </div>
