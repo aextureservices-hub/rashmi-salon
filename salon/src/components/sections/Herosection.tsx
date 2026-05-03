@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import image1 from "../../assets/image1.jpg"
-import image2 from '../../assets/bride.webp'
+import image2 from '../../assets/bride.jpg'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface Slide {
