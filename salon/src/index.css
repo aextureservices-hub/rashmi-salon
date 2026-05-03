@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Custom Scrollbar ─────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FDEEF5;
+}
+::-webkit-scrollbar-thumb {
+  background: #E87DAA;
+  border-radius: 3px;
+}
+
+/* ─── Base Styles ──────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans bg-cream text-salon-text overflow-x-hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+/* ─── Keyframes not supported by Tailwind config ──────────────────────────── */
+@keyframes loadProgress {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes scrollDown {
+  0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(6px); }
+}
+
+/* ─── Utility Classes ─────────────────────────────────────────────────────── */
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .bg-gradient-hero {
+    background: linear-gradient(135deg, #FFF0F8 0%, #F5E8FF 50%, #FFE8F0 100%);
+  }
+
+  .bg-gradient-dark {
+    background: linear-gradient(135deg, #2D1B2E, #1E1228);
+  }
+
+  /* Duration variants not in default Tailwind */
+  .duration-400 {
+    transition-duration: 400ms;
+  }
+}
