@@ -1,5 +1,4 @@
-import { useNavigate } from 'react-router-dom';
-import { Button } from '../components/ui/Button';
+
 import { SectionHeader } from '../components/ui/SectionHeader';
 import { FadeIn } from '../components/ui/FadeIn';
 import { StatCounter } from '../components/sections/StatCounter';
