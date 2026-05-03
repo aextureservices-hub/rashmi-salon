@@ -7,7 +7,8 @@ import { TestimonialsSlider } from '../components/sections/TestimonialsSlider';
 import { HeroSection } from '../components/sections/Herosection';
 import { SERVICES, STATS } from '../utils/data';
 import '../styles/index.css';
-import second from '../assets/basenod.png'
+import second from '../assets/faceafbf.png'
+import thired from "../assets/nailsab.png"
 
 const FEATURED_SERVICES = SERVICES.slice(0, 4);
 
@@ -23,7 +24,7 @@ const TRANSFORMATIONS = [
     subtitle: 'Deep Cleanse + Hydration',
   },
   {
-    image: '/images/transformations/nails.jpg',
+    image: thired,
     title: 'Nail Art',
     subtitle: 'Gel Polish + Design',
   },
