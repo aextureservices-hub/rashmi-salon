@@ -167,8 +167,8 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: 't1',
-    text: 'Lumina completely transformed my look! The team understood exactly what I wanted. Best salon experience I\'ve ever had.',
-    authorName: 'Priya Sharma',
+    text: 'Nice and satisied service with calm and sweet staff.. fully satisfied with the service.. hope to come again and again..',
+    authorName: 'Zeenat Ghazee',
     authorRole: 'Regular Client',
     avatar: '👩',
     rating: 5,
@@ -191,8 +191,8 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: 't4',
-    text: 'The ambiance is so luxurious and the facials leave my skin glowing for weeks. This is my go-to self-care destination!',
-    authorName: 'Riya Kapoor',
+    text: 'She is expert in hair colour and skin. I always come from Nagpur and use her special services which she provided to her client i just love it.',
+    authorName: 'Avish Kumar',
     authorRole: 'Skincare Lover',
     avatar: '🌸',
     rating: 5,
