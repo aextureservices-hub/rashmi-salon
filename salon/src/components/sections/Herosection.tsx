@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import image1 from "../../assets/image1.jpg"
 import image2 from '../../assets/bride.jpg'
+import image3 from '../../assets/bride2.jpeg'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface Slide {
@@ -42,7 +43,7 @@ const SLIDES: Slide[] = [
     badge: '✨ 500+ Styles Done',
   },
   {
-    img: 'https://lh3.googleusercontent.com/p/AF1QipOUdSYWqKy6FiIrgmw5IpPgp4N_FdswRi0bRmaq=s1360-w1360-h1020-rw',
+    img: image3,
     gradient: 'linear-gradient(135deg,#ffd6c0 0%,#f9cce0 50%,#e8caf5 100%)',
     eyebrow: 'Spa & Skin Rituals',
     headline: ['Indulge in', 'Pure Luxury'],
