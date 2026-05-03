@@ -235,4 +235,4 @@ export const BOOKING_SERVICES = [
 ];
 
 // ─── Salon WhatsApp ────────────────────────────────────────────────────────────
-export const SALON_WHATSAPP = '919876543210';
+export const SALON_WHATSAPP = '917024409426';

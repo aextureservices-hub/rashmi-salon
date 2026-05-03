@@ -2,85 +2,107 @@ import { useState } from 'react';
 import { WhatsAppIcon } from '../ui/WhatsAppIcon';
 import { openWhatsApp } from '../../utils/helpers';
 import { SALON_WHATSAPP } from '../../utils/data';
-import '../../styles/index.css'
+import '../../styles/index.css';
 
 export function WhatsAppFloat() {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [phone, setPhone] = useState('');
-
-  const handleOpen = () => setModalOpen(true);
-  const handleClose = () => setModalOpen(false);
+  const [hovered, setHovered] = useState(false);
 
   const handleChat = () => {
-    const cleaned = phone.replace(/\D/g, '');
-    const target = cleaned.length >= 10 ? cleaned : SALON_WHATSAPP;
-    const msg = encodeURIComponent("Hi! I'd like to connect with Lumina Beauty Studio 🌸");
-    openWhatsApp(msg, target);
-    handleClose();
+    const msg = encodeURIComponent("Hi! I'd like to book an appointment at Rashmi Beauty Salon & Spa 🌸");
+    openWhatsApp(msg, SALON_WHATSAPP);
   };
 
   return (
     <>
-      {/* Float Button */}
-      <div className="fixed bottom-7 right-7 z-[999] flex flex-col items-end gap-2.5 group">
-        <div className="text-[#2D1B2E] bg-[#2D1B2E] text-white px-3.5 py-2 rounded-[20px] text-xs font-semibold whitespace-nowrap opacity-0 translate-x-2.5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none">
-          Chat with us!
-        </div>
-        <button
-          onClick={handleOpen}
-          className="w-[58px] h-[58px] rounded-full bg-gradient-to-br from-wa-green to-wa-dark flex items-center justify-center cursor-pointer border-none text-white animate-wa-pulse hover:scale-110 hover:shadow-[0_10px_35px_rgba(37,211,102,0.6)] transition-all duration-300"
-          aria-label="Chat on WhatsApp"
-        >
-          <WhatsAppIcon size={30} />
-        </button>
-      </div>
+      {/* Keyframe styles */}
+      <style>{`
+        @keyframes wa-ripple {
+          0% { transform: scale(1); opacity: 0.55; }
+          100% { transform: scale(2.1); opacity: 0; }
+        }
+        @keyframes wa-ripple2 {
+          0% { transform: scale(1); opacity: 0.35; }
+          100% { transform: scale(2.6); opacity: 0; }
+        }
+        @keyframes wa-bob {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          30% { transform: translateY(-5px) rotate(-4deg); }
+          60% { transform: translateY(-3px) rotate(3deg); }
+        }
+        @keyframes wa-shine {
+          0% { left: -60%; opacity: 0; }
+          20% { opacity: 1; }
+          100% { left: 120%; opacity: 0; }
+        }
+        @keyframes label-in {
+          0% { opacity: 0; transform: translateX(10px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
 
-      {/* Modal Overlay */}
-      {modalOpen && (
-        <div
-          className="fixed inset-0 bg-[rgba(61,37,53,0.55)] backdrop-blur-[6px] z-[2000] flex items-center justify-center"
-          onClick={e => { if (e.target === e.currentTarget) handleClose(); }}
-        >
-          <div className="bg-white rounded-3xl p-8 max-w-[420px] w-[90%] shadow-[0_20px_60px_rgba(61,37,53,0.25)] text-center relative">
-            <button
-              onClick={handleClose}
-              className="absolute top-3.5 right-4 text-xl cursor-pointer text-salon-muted bg-transparent border-none"
-            >
-              ✕
-            </button>
+        .wa-btn-bob { animation: wa-bob 3s ease-in-out infinite; }
+        .wa-btn-bob:hover { animation: none; }
 
-            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-wa-green to-wa-dark mx-auto mb-4 flex items-center justify-center text-white">
-              <WhatsAppIcon size={28} />
-            </div>
+        .wa-ripple-1 {
+          position: absolute; inset: 0; border-radius: 9999px;
+          background: rgba(37, 211, 102, 0.45);
+          animation: wa-ripple 2s ease-out infinite;
+        }
+        .wa-ripple-2 {
+          position: absolute; inset: 0; border-radius: 9999px;
+          background: rgba(37, 211, 102, 0.25);
+          animation: wa-ripple2 2s ease-out infinite 0.65s;
+        }
+        .wa-shine::after {
+          content: '';
+          position: absolute;
+          top: 0; left: -60%;
+          width: 40%; height: 100%;
+          background: linear-gradient(120deg, transparent, rgba(255,255,255,0.38), transparent);
+          animation: wa-shine 3.5s ease-in-out infinite 1.2s;
+        }
+        .wa-label-animate { animation: label-in 0.25s ease-out both; }
+      `}</style>
 
-            <h3 className="font-display text-[22px] font-bold text-salon-text mb-2">Chat on WhatsApp</h3>
-            <p className="text-sm text-salon-muted mb-5 leading-relaxed">
-              Enter your WhatsApp number to receive your booking confirmation, or just chat with us directly!
-            </p>
+      <div className="fixed bottom-7 right-7 z-[999] flex flex-col items-end gap-3">
 
-            <input
-              type="tel"
-              value={phone}
-              onChange={e => setPhone(e.target.value)}
-              placeholder="+91 98765 43210"
-              maxLength={15}
-              className="w-full px-4 py-3.5 border-2 border-wa-green/35 rounded-[14px] text-[15px] text-center tracking-wide text-salon-text bg-green-50 outline-none focus:border-wa-green transition-colors"
-            />
-
-            <button
-              onClick={handleChat}
-              className="mt-4 w-full py-3.5 rounded-full bg-gradient-to-br from-wa-green to-wa-dark text-white text-[15px] font-bold flex items-center justify-center gap-2.5 shadow-[0_4px_18px_rgba(37,211,102,0.4)] hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(37,211,102,0.55)] transition-all duration-300"
-            >
-              <WhatsAppIcon size={20} />
-              Open WhatsApp
-            </button>
-
-            <p className="text-xs text-salon-muted mt-3.5">
-              We'll reply within minutes during business hours 🌸
-            </p>
+        {/* Tooltip label */}
+        {hovered && (
+          <div className="wa-label-animate flex items-center gap-2 bg-[#111] text-white px-4 py-2 rounded-2xl text-xs font-semibold whitespace-nowrap shadow-lg pointer-events-none">
+            <span className="text-[10px]">💬</span>
+            Chat with us on WhatsApp
           </div>
+        )}
+
+        {/* Button wrapper for ripples */}
+        <div className="relative flex items-center justify-center">
+          {/* Ripple rings */}
+          <div className="wa-ripple-1" />
+          <div className="wa-ripple-2" />
+
+          {/* Main button */}
+          <button
+            onClick={handleChat}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+            aria-label="Chat on WhatsApp"
+            className="wa-btn-bob wa-shine relative z-10 w-[62px] h-[62px] rounded-full flex items-center justify-center cursor-pointer border-none overflow-hidden"
+            style={{
+              background: 'linear-gradient(135deg, #29d06b 0%, #25d366 40%, #128C7E 100%)',
+              boxShadow: '0 6px 28px rgba(37,211,102,0.55), 0 2px 8px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.25)',
+            }}
+          >
+            {/* Inner glow ring */}
+            <span
+              className="absolute inset-[3px] rounded-full pointer-events-none"
+              style={{
+                background: 'linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 60%)',
+                border: '1px solid rgba(255,255,255,0.2)',
+              }}
+            />
+            <WhatsAppIcon size={32} />
+          </button>
         </div>
-      )}
+      </div>
     </>
   );
 }
