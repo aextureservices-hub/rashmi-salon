@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { Button } from '../../components/ui/Button';
 import type { Service } from '../../types';
-import '../../styles/index.css'
+import { P } from '../../utils/palette';
 
 interface ServiceCardProps {
   service: Service;
@@ -21,21 +20,100 @@ export function ServiceCard({ service, onBook }: ServiceCardProps) {
   };
 
   return (
-    <div className="bg-white rounded-3xl overflow-hidden shadow-[0_4px_25px_rgba(232,125,170,0.1)] border border-rose-soft/20 transition-all duration-400 cursor-pointer hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(232,125,170,0.2)]">
-      <div
-        className="h-[180px] flex items-center justify-center text-[60px]"
-        style={{ background: service.gradient }}
-      >
-        {service.icon}
+    <div style={styles.card}>
+      {/* Image / Icon area */}
+      <div style={{ ...styles.imgArea, background: service.gradient }}>
+        <span style={styles.icon}>{service.icon}</span>
       </div>
-      <div className="p-5">
-        <h3 className="font-display text-xl font-semibold mb-2 text-salon-text">{service.name}</h3>
-        <p className="text-[13px] text-salon-muted leading-relaxed mb-4">{service.description}</p>
-        <div className="flex items-center justify-between">
-          <span className="font-display text-lg font-bold text-rose-deep">{service.price}</span>
-          <Button variant="sm" onClick={handleBook}>Book Now</Button>
+
+      {/* Body */}
+      <div style={styles.body}>
+        <h3 style={styles.name}>{service.name}</h3>
+        <p style={styles.desc}>{service.description}</p>
+
+        <div style={styles.footer}>
+          <span style={styles.price}>{service.price}</span>
+          <button
+            onClick={handleBook}
+            style={styles.btn}
+            onMouseEnter={e => {
+              (e.currentTarget as HTMLButtonElement).style.boxShadow =
+                '0 4px 18px rgba(139,72,101,0.5)';
+              (e.currentTarget as HTMLButtonElement).style.transform =
+                'translateY(-1px)';
+            }}
+            onMouseLeave={e => {
+              (e.currentTarget as HTMLButtonElement).style.boxShadow = 'none';
+              (e.currentTarget as HTMLButtonElement).style.transform =
+                'translateY(0)';
+            }}
+          >
+            Book Now
+          </button>
         </div>
       </div>
     </div>
   );
 }
+
+const styles: Record<string, React.CSSProperties> = {
+  card: {
+    background: P.cardBgSolid,
+    border: `1px solid ${P.border}`,
+    borderRadius: 16,
+    overflow: 'hidden',
+    cursor: 'pointer',
+    transition: 'transform 0.3s, box-shadow 0.3s, border-color 0.3s',
+  },
+  imgArea: {
+    height: 130,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  icon: {
+    fontSize: 48,
+    lineHeight: 1,
+  },
+  body: {
+    padding: '14px 14px 16px',
+  },
+  name: {
+    fontFamily: "'Cormorant Garamond', serif",
+    fontSize: 17,
+    fontWeight: 600,
+    color: P.textGold,
+    margin: '0 0 6px',
+    lineHeight: 1.2,
+  },
+  desc: {
+    fontSize: 12,
+    color: P.textGoldFaint,
+    lineHeight: 1.55,
+    margin: '0 0 12px',
+  },
+  footer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  price: {
+    fontFamily: "'Cormorant Garamond', serif",
+    fontSize: 18,
+    fontWeight: 700,
+    color: P.textGold,
+  },
+  btn: {
+    padding: '6px 14px',
+    borderRadius: 100,
+    background: P.gradBrand,
+    border: 'none',
+    color: P.text,
+    fontFamily: "'Jost', sans-serif",
+    fontSize: 11,
+    fontWeight: 500,
+    cursor: 'pointer',
+    letterSpacing: '0.5px',
+    transition: 'box-shadow 0.2s, transform 0.2s',
+  },
+};
