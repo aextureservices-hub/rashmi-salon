@@ -1,65 +1,71 @@
-// src/components/gallery/GalleryGrid.tsx
-import { useEffect, useRef } from 'react';
-import { GALLERY_ITEMS } from '../../utils/data';
-import type { GalleryItem } from '../../types';
+import React, { useEffect, useRef, useState } from 'react';
+import { P } from '../../utils/palette';
 
-function GalleryCard({ item, index }: { item: GalleryItem; index: number }) {
+
+export interface GalleryItem {
+  id: string;
+  label: string;
+  category: string;
+  image: string;
+  gradient?: string;
+  tall?: boolean;
+}
+
+export function GalleryCard({ item, index }: { item: GalleryItem; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
+  const [imgFailed, setImgFailed] = useState(!item.image);
+  const height = item.tall ? 320 : 200;
 
   useEffect(() => {
     const el = cardRef.current;
     if (!el) return;
-    const observer = new IntersectionObserver(
+    const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => el.classList.add('visible'), index * 60);
-          observer.disconnect();
+          setTimeout(() => el.classList.add('visible'), index * 55);
+          obs.disconnect();
         }
       },
       { threshold: 0.05 }
     );
-    observer.observe(el);
-    return () => observer.disconnect();
+    obs.observe(el);
+    return () => obs.disconnect();
   }, [index]);
 
   return (
-    <div ref={cardRef} className={`g-card${item.tall ? ' tall' : ''}`}>
-      <div
-        className="g-placeholder"
-        style={{ background: item.gradient ?? '#fde8f3' }}
-      />
-      <img
-        src={item.image}
-        alt={item.label}
-        loading="lazy"
-        style={{ minHeight: item.tall ? '310px' : '150px' }}
-        onError={(e) => {
-          const img = e.currentTarget;
-          img.style.display = 'none';
-          const ph = img.previousElementSibling as HTMLElement;
-          if (ph) { ph.style.display = 'block'; ph.style.minHeight = img.style.minHeight; }
-        }}
-      />
-      <div className="g-overlay">
-        <span className="g-label">{item.label}</span>
-        <span className="g-tag">{item.category}</span>
+    <div className="pg-col-item">
+      <div ref={cardRef} className="pg-card" style={{ height }}>
+        <div className="pg-img-wrap">
+          {imgFailed ? (
+            <div className="pg-placeholder" style={{ background: item.gradient ?? P.section, height }} />
+          ) : (
+            <img src={item.image} alt={item.label} loading="lazy" onError={() => setImgFailed(true)}
+              style={{ width: '100%', height, objectFit: 'cover', display: 'block' }} />
+          )}
+        </div>
+        <div className="pg-shimmer" />
+        <div className="pg-overlay">
+          <div style={{ display: 'inline-block', background: P.gradBrand, padding: '2px 10px', borderRadius: 100, marginBottom: 6 }}>
+            <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 10, letterSpacing: '1.8px', textTransform: 'uppercase', color: P.gold, fontWeight: 500 }}>
+              {item.category}
+            </span>
+          </div>
+          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 17, color: P.text, margin: 0, lineHeight: 1.25 }}>
+            {item.label}
+          </p>
+        </div>
       </div>
     </div>
   );
 }
 
-export function GalleryGrid() {
+export function GalleryGrid({ items, activeFilter }: { items: GalleryItem[], activeFilter: string }) {
+  const filtered = activeFilter === 'All' ? items : items.filter(i => i.category === activeFilter);
   return (
-    <div className="g-wrap">
-      <div className="g-head">
-        <h2>Our Gallery</h2>
-        <p>crafted with care · every look a story</p>
-      </div>
-      <div className="g-grid">
-        {GALLERY_ITEMS.map((item, i) => (
-          <GalleryCard key={item.id} item={item} index={i} />
-        ))}
-      </div>
+    <div className="pg-grid">
+      {filtered.map((item, i) => (
+        <GalleryCard key={item.id} item={item} index={i} />
+      ))}
     </div>
   );
 }
