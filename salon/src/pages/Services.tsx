@@ -1,4 +1,5 @@
-import { useState, CSSProperties } from 'react';
+import { useState } from 'react';
+import type { CSSProperties } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ServiceCard } from '../components/sections/ServiceCard';
 import { SERVICES } from '../utils/data';
