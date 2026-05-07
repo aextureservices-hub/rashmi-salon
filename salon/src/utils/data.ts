@@ -30,10 +30,10 @@ export const NAV_LINKS: NavLink[] = [
 
 // ─── Stats ─────────────────────────────────────────────────────────────────────
 export const STATS: Stat[] = [
-  { id: 'clients', target: 2400, suffix: '+', label: 'Happy Clients' },
+  { id: 'clients', target: 2000, suffix: '+', label: 'Happy Clients' },
   { id: 'services', target: 75, suffix: '+', label: 'Services Offered' },
   { id: 'artists', target: 6, suffix: '+', label: 'Expert Artists' },
-  { id: 'years', target: 9, suffix: '+', label: 'Years of Glam' },
+  { id: 'years', target: 14, suffix: '+', label: 'Years of Glam' },
 ];
 
 // ─── Services ──────────────────────────────────────────────────────────────────

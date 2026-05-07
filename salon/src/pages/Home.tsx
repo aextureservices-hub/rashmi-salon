@@ -1,4 +1,3 @@
-
 import { SectionHeader } from '../components/ui/SectionHeader';
 import { FadeIn } from '../components/ui/FadeIn';
 import { StatCounter } from '../components/sections/StatCounter';
@@ -6,9 +5,10 @@ import { ServiceCard } from '../components/sections/ServiceCard';
 import { TestimonialsSlider } from '../components/sections/TestimonialsSlider';
 import { HeroSection } from '../components/sections/Herosection';
 import { SERVICES, STATS } from '../utils/data';
+import { P, DIVIDER } from '../utils/palette';
 import '../styles/index.css';
-import second from '../assets/faceab.png'
-import thired from "../assets/nailsab.png"
+import second from '../assets/faceab.png';
+import thired from '../assets/nailsab.png';
 
 const FEATURED_SERVICES = SERVICES.slice(0, 4);
 
@@ -18,36 +18,26 @@ const TRANSFORMATIONS = [
     title: 'Hair Transformation',
     subtitle: 'Balayage + Cut + Style',
   },
-  {
-    image: second,
-    title: 'Glow Facial',
-    subtitle: 'Deep Cleanse + Hydration',
-  },
-  {
-    image: thired,
-    title: 'Nail Art',
-    subtitle: 'Gel Polish + Design',
-  },
+  { image: second, title: 'Glow Facial', subtitle: 'Deep Cleanse + Hydration' },
+  { image: thired, title: 'Nail Art',    subtitle: 'Gel Polish + Design' },
 ];
 
 export default function Home() {
   return (
-    <>
-      {/* ─── Hero (Image Slider) ──────────────────────────────────────────── */}
+    <div style={{ background: P.bg, minHeight: '100vh' }}>
+
+      {/* ─── Hero ── */}
       <HeroSection />
 
-      {/* ─── Featured Services ────────────────────────────────────────────── */}
+      {/* ─── Featured Services ── */}
       <FadeIn>
-        <section
-          className="py-20 px-[5%]"
-          style={{ background: 'linear-gradient(160deg,#FFF5FB,#F5EEFF,#FFF5FB)' }}
-        >
+        <section className="py-20 px-[5%]" style={{ background: P.bg }}>
           <div className="max-w-[1200px] mx-auto">
             <SectionHeader
               tag="What We Offer"
               title="Our Signature Services"
               subtitle="Indulge in our carefully curated beauty treatments, designed to make you feel your absolute best."
-              center
+              center gold
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {FEATURED_SERVICES.map(service => (
@@ -58,99 +48,173 @@ export default function Home() {
         </section>
       </FadeIn>
 
-       {/* ─── Stats ───────────────────────────────────────────────────────── */}
+      <div style={DIVIDER} />
+
+      {/* ─── Stats ── */}
       <FadeIn>
-        <section className="py-16  border-t border-rose-soft/15"
-        style={{ background: 'linear-gradient(135deg,#F5EEFF,#FFF0F8)' }}
-        >
-          <div className="max-w-[900px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 px-[5%]">
+        <section className="py-16 px-[5%]" style={{ background: P.bg }}>
+          <div className="max-w-[900px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
             {STATS.map(stat => (
               <StatCounter key={stat.id} stat={stat} />
             ))}
           </div>
         </section>
       </FadeIn>
-      {/* ─── Testimonials ─────────────────────────────────────────────────── */}
+
+      <div style={DIVIDER} />
+
+      {/* ─── Testimonials ── */}
       <FadeIn>
-        <section
-          className="py-20 px-[5%]"
-          style={{ background: 'linear-gradient(135deg,#F5EEFF,#FFF0F8)' }}
-        >
+        <section className="py-20 px-[5%]" style={{ background: P.bg }}>
           <div className="max-w-[1200px] mx-auto">
-            <SectionHeader tag="Client Love" title="What They Say About Us" center />
+            <SectionHeader tag="Client Love" title="What They Say About Us" center gold/>
             <TestimonialsSlider />
           </div>
         </section>
       </FadeIn>
 
-      {/* ─── Transformations ─────────────────────────────────────────────── */}
+      <div style={DIVIDER} />
+
+      {/* ─── Transformations ── */}
       <FadeIn>
-        <section className="py-20 px-[5%] ">
+        <section className="py-20 px-[5%]" style={{ background: P.bg }}>
           <div className="max-w-[1200px] mx-auto">
             <SectionHeader
               tag="Transformations"
               title="Before & After Magic ✨"
               subtitle="Real results from our talented artists. Every transformation tells a story."
-              center
+              center gold
             />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {TRANSFORMATIONS.map(t => (
-                    <div key={t.title} className="rounded-[20px] overflow-hidden shadow-[0_8px_30px_rgba(232,125,170,0.12)]">
-                      
-                      {/* Single image split into Before / After */}
-                      <div className="relative h-[200px] overflow-hidden">
-                        
-                        {/* BEFORE — left half: grayscale */}
-                        <div className="absolute inset-0 w-full h-full">
-                          <img
-                            src={t.image}
-                            alt={`${t.title} before`}
-                            className="w-full h-full object-cover"
-                            style={{ filter: 'grayscale(100%) brightness(0.85)' }}
-                          />
-                        </div>
+                <div
+                  key={t.title}
+                  className="rounded-[20px] overflow-hidden"
+                  style={{
+                    background: P.cardBg,
+                    border: `1px solid ${P.borderMid}`,
+                    boxShadow: `0 8px 30px ${P.glow}`,
+                    transition: 'transform 0.22s ease, box-shadow 0.22s ease',
+                  }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-4px)';
+                    (e.currentTarget as HTMLDivElement).style.boxShadow = `0 16px 48px ${P.glow}, 0 0 0 1px ${P.borderHot}`;
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLDivElement).style.transform = '';
+                    (e.currentTarget as HTMLDivElement).style.boxShadow = `0 8px 30px ${P.glow}`;
+                  }}
+                >
+                  {/* Before / After split */}
+                  <div className="relative h-[220px] overflow-hidden">
 
-                        {/* AFTER — right half: full color, clipped to right 50% */}
-                        <div className="absolute inset-0 w-full h-full" style={{ clipPath: 'inset(0 0 0 50%)' }}>
-                          <img
-                            src={t.image}
-                            alt={`${t.title} after`}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-
-                        {/* Center divider line */}
-                        <div className="absolute inset-y-0 left-1/2 w-[2px] -translate-x-1/2 bg-white/90 z-10" />
-
-                        {/* Center divider handle */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-7 h-7 rounded-full bg-white shadow-md flex items-center justify-center">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9d4c6f" strokeWidth="2.5">
-                            <path d="M8 9l-4 3 4 3M16 9l4 3-4 3"/>
-                          </svg>
-                        </div>
-
-                        {/* Before label */}
-                        <span className="absolute bottom-2 left-3 z-10 text-[10px] font-semibold tracking-widest uppercase text-white bg-black/40 px-2 py-0.5 rounded-full">
-                          Before
-                        </span>
-
-                        {/* After label */}
-                        <span className="absolute bottom-2 right-3 z-10 text-[10px] font-semibold tracking-widest uppercase text-white bg-rose-deep/70 px-2 py-0.5 rounded-full">
-                          After
-                        </span>
-                      </div>
-
-                      {/* Card footer */}
-                      <div className="p-4 bg-white">
-                        <h4 className="font-display text-base font-semibold text-salon-text">{t.title}</h4>
-                        <p className="text-xs text-salon-muted mt-1">{t.subtitle}</p>
-                      </div>
+                    {/* BEFORE — grayscale */}
+                    <div className="absolute inset-0">
+                      <img
+                        src={t.image}
+                        alt={`${t.title} before`}
+                        className="w-full h-full object-cover"
+                        style={{ filter: 'grayscale(100%) brightness(0.68)' }}
+                      />
                     </div>
-                  ))}
+
+                    {/* AFTER — color, right half */}
+                    <div className="absolute inset-0" style={{ clipPath: 'inset(0 0 0 50%)' }}>
+                      <img
+                        src={t.image}
+                        alt={`${t.title} after`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+
+                    {/* Warm gold overlay on the after side */}
+                    <div
+                      className="absolute inset-0 pointer-events-none"
+                      style={{
+                        clipPath: 'inset(0 0 0 50%)',
+                        background: 'linear-gradient(160deg,rgba(212,169,106,0.08),transparent 60%)',
+                      }}
+                    />
+
+                    {/* Divider line */}
+                    <div
+                      className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[2px] z-10"
+                      style={{ background: P.blush }}
+                    />
+
+                    {/* Divider handle */}
+                    <div
+                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full flex items-center justify-center"
+                      style={{
+                        background: P.gradGold,
+                        boxShadow: `0 4px 16px ${P.glow}, 0 0 0 2px ${P.borderHot}`,
+                      }}
+                    >
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={P.primaryDark} strokeWidth="2.5">
+                        <path d="M8 9l-4 3 4 3M16 9l4 3-4 3" />
+                      </svg>
+                    </div>
+
+                    {/* Before label */}
+                    <span
+                      className="absolute bottom-3 left-3 z-10 text-[10px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full"
+                      style={{
+                        background: 'rgba(28,15,26,0.72)',
+                        color: P.textMuted,
+                        border: `1px solid ${P.border}`,
+                        fontFamily: "'Outfit',sans-serif",
+                      }}
+                    >
+                      Before
+                    </span>
+
+                    {/* After label */}
+                    <span
+                      className="absolute bottom-3 right-3 z-10 text-[10px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full"
+                      style={{
+                        background: P.gradBrand,
+                        color: P.blush,
+                        fontFamily: "'Outfit',sans-serif",
+                        boxShadow: `0 4px 12px ${P.glow}`,
+                      }}
+                    >
+                      After
+                    </span>
+                  </div>
+
+                  {/* Card footer */}
+                  <div
+                    className="px-5 py-4"
+                    style={{ borderTop: `1px solid ${P.border}` }}
+                  >
+                    <h4
+                      className="text-base font-semibold mb-1"
+                      style={{
+                        fontFamily: "'Playfair Display',serif",
+                        color: P.text,
+                        letterSpacing: '0.02em',
+                      }}
+                    >
+                      {t.title}
+                    </h4>
+                    <p
+                      className="text-xs"
+                      style={{
+                        color: P.textMuted,
+                        fontFamily: "'Outfit',sans-serif",
+                        letterSpacing: '0.06em',
+                      }}
+                    >
+                      {t.subtitle}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
       </FadeIn>
-    </>
+
+    </div>
   );
 }
