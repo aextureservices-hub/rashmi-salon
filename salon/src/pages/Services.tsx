@@ -5,6 +5,7 @@ import { ServiceCard } from '../components/sections/ServiceCard';
 import { SERVICES } from '../utils/data';
 import { P } from '../utils/palette';
 import type { Service, ServiceCategory } from '../types';
+import { MenuCard } from '../components/sections/Menusection';
 
 type FilterValue = 'all' | ServiceCategory;
 
@@ -132,6 +133,7 @@ export default function Services() {
           }
 
         </div>
+        <MenuCard />
       </section>
     </div>
   );
@@ -163,7 +165,7 @@ const styles: Record<string, CSSProperties> = {
   root: {
     background: P.bg,
     minHeight:  '100vh',
-    fontFamily: "'Jost', sans-serif",
+    fontFamily: "Cormorant Garamond', serif",
     color:      P.text,
   },
 
@@ -173,6 +175,7 @@ const styles: Record<string, CSSProperties> = {
     textAlign:  'center',
     background: `linear-gradient(160deg, ${P.section} 0%, ${P.bg} 65%)`,
     borderBottom: `1px solid ${P.border}`,
+    fontFamily: "Cormorant Garamond', serif",
   },
   heroInner: {
     maxWidth: 600,
@@ -220,7 +223,7 @@ const styles: Record<string, CSSProperties> = {
     border:       `1px solid ${P.borderMid}`,
     background:   'transparent',
     color:        P.textGoldMuted,
-    fontFamily:   "'Jost', sans-serif",
+    fontFamily:   "Cormorant Garamond', serif",
     fontSize:     13,
     fontWeight:   400,
     cursor:       'pointer',
@@ -270,7 +273,7 @@ const styles: Record<string, CSSProperties> = {
   grid: {
     display:             'grid',
     gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))',
-    gap:                 16,
+    gap:                4,
   },
 };
 

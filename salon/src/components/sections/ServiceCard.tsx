@@ -29,7 +29,7 @@ export function ServiceCard({ service, onBook }: ServiceCardProps) {
       {/* Body */}
       <div style={styles.body}>
         <h3 style={styles.name}>{service.name}</h3>
-        <p style={styles.desc}>{service.description}</p>
+        
 
         <div style={styles.footer}>
           <span style={styles.price}>{service.price}</span>
