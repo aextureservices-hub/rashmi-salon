@@ -266,7 +266,7 @@ export const servicesData = [
       category: 'Threading Services',
       services: [
         { name: 'Eyebrows + Upper Lip', price: '₹70' },
-        { name: 'Eyebrows',             price: '₹50' },
+        { name: 'Eyebrows',             price: '₹60' },
         { name: 'Upper Lip',            price: '₹20' },
         { name: 'Face Threading',       price: '₹250' },
         { name: 'Chin',                 price: '₹50' },
