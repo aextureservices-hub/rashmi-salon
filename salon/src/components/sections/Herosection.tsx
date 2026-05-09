@@ -4,23 +4,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import image1 from '../../assets/image1.jpg';
 import image2 from '../../assets/bride.jpg';
 import image3 from '../../assets/bride2.jpeg';
+import { P } from '../../utils/palette';
 
 const SLIDE_INTERVAL = 5500;
 
-// ── Palette ────────────────────────────────────────────────────────────────────
-const P = {
-  bg:        '#1C0F1A',
-  section:   '#2E1628',
-  primary:   '#8B4865',
-  gold:      '#D4A96A',
-  blush:     '#E8C9B8',
-  text:      '#F5ECD7',
-  textMuted: 'rgba(245,236,215,0.55)',
-  textFaint: 'rgba(245,236,215,0.3)',
-  border:    'rgba(212,169,106,0.2)',
-  borderMid: 'rgba(212,169,106,0.35)',
-  glow:      'rgba(139,72,101,0.5)',
-};
 
 const SLIDES = [
   {

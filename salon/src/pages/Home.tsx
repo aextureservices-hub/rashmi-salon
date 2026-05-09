@@ -9,6 +9,7 @@ import { P, DIVIDER } from '../utils/palette';
 import '../styles/index.css';
 import second from '../assets/faceab.png';
 import thired from '../assets/nailsab.png';
+import Brand from "../components/sections/Brand"
 
 const FEATURED_SERVICES = SERVICES.slice(0, 4);
 
@@ -62,6 +63,8 @@ export default function Home() {
       </FadeIn>
 
       <div style={DIVIDER} />
+      <Brand />
+
 
       {/* ─── Testimonials ── */}
       <FadeIn>
