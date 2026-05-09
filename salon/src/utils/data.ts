@@ -226,7 +226,7 @@ export const VALUES: Value[] = [
 export const CONTACT_INFO: ContactInfo[] = [
   { icon: '📍', label: 'Our Location', value: 'Kavita Complex, Kamla College Road\nRajnandgaon, CG 491441' },
   { icon: '📞', label: 'Call Us', value: '+91 98765 43210' },
-  { icon: '✉️', label: 'Email Us', value: 'hello@luminabeauty.in' },
+  { icon: '✉️', label: 'Email Us', value: 'rashmibuatysalon@gmail.com' },
   { icon: '🕐', label: 'Working Hours', value: 'Mon–Sat: 9:00 AM – 8:00 PM\nSunday: 10:00 AM – 6:00 PM' },
 ];
 
