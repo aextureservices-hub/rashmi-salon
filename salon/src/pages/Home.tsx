@@ -1,7 +1,7 @@
 import { SectionHeader } from '../components/ui/SectionHeader';
 import { FadeIn } from '../components/ui/FadeIn';
 import { StatCounter } from '../components/sections/StatCounter';
-import { ServiceCard } from '../components/sections/ServiceCard';
+import { HomeServiceCard } from "../components/sections/HomeServiceCard";
 import { TestimonialsSlider } from '../components/sections/TestimonialsSlider';
 import { HeroSection } from '../components/sections/Herosection';
 import { SERVICES, STATS } from '../utils/data';
@@ -42,7 +42,7 @@ export default function Home() {
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {FEATURED_SERVICES.map(service => (
-                <ServiceCard key={service.id} service={service} />
+                <HomeServiceCard key={service.id} service={service} />
               ))}
             </div>
           </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { P } from '../utils/palette';
 import { STATS } from '../utils/data';
 import { FadeIn } from '../components/ui/FadeIn';
@@ -164,6 +165,8 @@ function GoldRule() {
 
 // ─── Section Components ───────────────────────────────────────────────────────
 function HeroSection() {
+  const navigate = useNavigate();
+
   return (
     <section className="ab-hero">
       <div className="ab-hero__blob ab-hero__blob--tr" />
@@ -184,8 +187,18 @@ function HeroSection() {
             tradition and refined by artistry.
           </p>
           <div className="ab-hero__cta-group">
-            <button className="ab-btn ab-btn--primary">Book Experience</button>
-            <button className="ab-btn ab-btn--ghost">Our Services</button>
+            <button
+              className="ab-btn ab-btn--primary"
+              onClick={() => navigate('/booking')}
+            >
+              Book Experience
+            </button>
+            <button
+              className="ab-btn ab-btn--ghost"
+              onClick={() => navigate('/services')}
+            >
+              Our Services
+            </button>
           </div>
         </Fade>
 

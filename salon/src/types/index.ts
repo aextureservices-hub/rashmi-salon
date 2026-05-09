@@ -9,6 +9,7 @@ export interface Service {
   price: string;
   priceValue: number;
   icon: string;
+  image?: string;
   gradient: string;
 }
 

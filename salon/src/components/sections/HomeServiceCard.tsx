@@ -7,7 +7,7 @@ interface ServiceCardProps {
   onBook?: (service: Service) => void;
 }
 
-export function ServiceCard({ service, onBook }: ServiceCardProps) {
+export function HomeServiceCard({ service, onBook }: ServiceCardProps) {
   const navigate = useNavigate();
 
   const handleBook = (e: React.MouseEvent) => {
@@ -101,7 +101,7 @@ const styles: Record<string, React.CSSProperties> = {
   /* Image container */
   imgWrap: {
     position: 'relative',
-    height: 180,
+    height: 350,
     overflow: 'hidden',
     flexShrink: 0,
   },

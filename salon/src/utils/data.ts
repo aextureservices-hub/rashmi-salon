@@ -18,6 +18,11 @@ import image6 from '../assets/bride.jpg'
 import image7 from '../assets/image1.jpg'
 import image8 from '../assets/bride2.jpeg'
 import image9 from '../assets/bride.jpg'
+import pro1 from '../assets/p2.jpg';
+import pro2 from '../assets/p1.jpg';
+import pro3 from '../assets/p3.jpg';
+import pro4 from '../assets/p4.jpg';
+import pro5 from '../assets/p5.jpg';
 
 // ─── Navigation ────────────────────────────────────────────────────────────────
 export const NAV_LINKS: NavLink[] = [
@@ -46,6 +51,7 @@ export const SERVICES: Service[] = [
     price: '₹499',
     priceValue: 499,
     icon: '✂️',
+    image: pro3,
     gradient: 'linear-gradient(135deg,#FDEEF5,#F9D5E5)',
   },
   {
@@ -56,6 +62,7 @@ export const SERVICES: Service[] = [
     price: '₹999',
     priceValue: 999,
     icon: '🎨',
+    image: pro2,
     gradient: 'linear-gradient(135deg,#FFF5EB,#FFD5B8)',
   },
   {
@@ -66,6 +73,7 @@ export const SERVICES: Service[] = [
     price: '₹4999',
     priceValue: 4999,
     icon: '👰',
+    image: pro5,
     gradient: 'linear-gradient(135deg,#FFF5EB,#FFD5B8)',
   },
   {
@@ -76,6 +84,7 @@ export const SERVICES: Service[] = [
     price: '₹999',
     priceValue: 999,
     icon: '💆‍♀️',
+    image: pro4,
     gradient: 'linear-gradient(135deg,#F5EEFF,#EDD5F9)',
   },
   {
@@ -86,6 +95,7 @@ export const SERVICES: Service[] = [
     price: '₹999',
     priceValue: 999,
     icon: '✨',
+    image: pro1,
     gradient: 'linear-gradient(135deg,#F5EEFF,#EDD5F9)',
   },
   {
@@ -96,6 +106,7 @@ export const SERVICES: Service[] = [
     price: '₹799',
     priceValue: 799,
     icon: '🌿',
+    image: pro5,
     gradient: 'linear-gradient(135deg,#EEFFF5,#D5F9E8)',
   },
   {
@@ -106,6 +117,7 @@ export const SERVICES: Service[] = [
     price: '₹1499',
     priceValue: 1499,
     icon: '🌹',
+    image: pro1,
     gradient: 'linear-gradient(135deg,#FDEEF5,#F9D5E5)',
   },
   {
@@ -116,6 +128,7 @@ export const SERVICES: Service[] = [
     price: '₹499',
     priceValue: 499,
     icon: '💅',
+    image: pro1,
     gradient: 'linear-gradient(135deg,#FFF5EB,#FFE0C4)',
   },
   {
@@ -126,6 +139,7 @@ export const SERVICES: Service[] = [
     price: '₹699',
     priceValue: 699,
     icon: '🎨',
+    image: pro1,
     gradient: 'linear-gradient(135deg,#F5EEFF,#EDD5F9)',
   },
   {
@@ -136,6 +150,7 @@ export const SERVICES: Service[] = [
     price: '₹699',
     priceValue: 699,
     icon: '🦶',
+    image: pro1,
     gradient: 'linear-gradient(135deg,#EEFFF5,#D5F9E8)',
   },
   {
@@ -146,6 +161,7 @@ export const SERVICES: Service[] = [
     price: '₹1499',
     priceValue: 1499,
     icon: '💄',
+    image: pro1,
     gradient: 'linear-gradient(135deg,#FDEEF5,#F9D5E5)',
   },
   {
@@ -156,6 +172,7 @@ export const SERVICES: Service[] = [
     price: '₹4999',
     priceValue: 4999,
     icon: '👰',
+    image: pro1,
     gradient: 'linear-gradient(135deg,#FFF5EB,#FFD5B8)',
   },
 ];
