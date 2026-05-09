@@ -8,7 +8,6 @@ import image2 from "../assets/cetificate2.jpeg";
 import image3 from "../assets/cetificate3.jpeg";
 import image4 from "../assets/cetificate4.jpeg";
 import image5 from "../assets/cetificate5.jpeg";
-import image6 from "../assets/cetificate7.jpeg";
 import image7 from "../assets/cetificate8.jpeg";
 
 // ─── Types ──────────────────────────────────────────────────────────────────
