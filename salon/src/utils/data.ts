@@ -249,12 +249,12 @@ export const CONTACT_INFO: ContactInfo[] = [
 
 // ─── Booking Services (for booking form) ──────────────────────────────────────
 export const BOOKING_SERVICES = [
-  { icon: '💇‍♀️', name: 'Hair Styling', price: '₹499' },
-  { icon: '✨', name: 'Skin Facial', price: '₹799' },
-  { icon: '💅', name: 'Nail Art', price: '₹399' },
-  { icon: '💄', name: 'Bridal Makeup', price: '₹2499' },
-  { icon: '🎨', name: 'Hair Color', price: '₹999' },
-  { icon: '🦶', name: 'Pedicure', price: '₹499' },
+  { icon: '💇‍♀️', name: 'Hair Styling',   price: '₹499',  image: pro3 },
+  { icon: '✨',    name: 'Skin Facial',    price: '₹799',  image: pro1 },
+  { icon: '💅',    name: 'Nail Art',       price: '₹399',  image: pro1 },
+  { icon: '💄',    name: 'Bridal Makeup',  price: '₹2499', image: pro5 },
+  { icon: '🎨',    name: 'Hair Color',     price: '₹999',  image: pro4 },
+  { icon: '🦶',    name: 'Pedicure',       price: '₹499',  image: pro2 },
 ];
 
 // ─── Salon WhatsApp ────────────────────────────────────────────────────────────

@@ -362,6 +362,31 @@ const CSS = `
   .bk-card { padding: 28px 20px; }
   .bk-services-grid { grid-template-columns: 1fr; }
 }
+/* ── Service card image ── */
+.bk-svc-img-wrap {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 17px 17px 0 0;
+}
+.bk-svc-img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform 0.4s ease;
+}
+.bk-svc-btn:hover .bk-svc-img { transform: scale(1.06); }
+.bk-svc-btn--active .bk-svc-img { transform: scale(1.06); }
+
+.bk-svc-img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(28,15,26,0.65) 100%);
+  pointer-events: none;
+}
+
+.bk-svc-info {
+  padding: 10px 12px 12px;
+  text-align: left;
+}
 `;
 
 export default function Booking() {
@@ -445,7 +470,8 @@ export default function Booking() {
           <div className="bk-card">
             <BookingSteps currentStep={currentStep} />
 
-            {/* ── Step 1: Service ── */}
+            
+           {/* ── Step 1: Service ── */}
             {currentStep === 1 && (
               <div>
                 <h3 className="bk-step-heading bk-display bk-gold-text">Choose Your Service</h3>
@@ -457,22 +483,30 @@ export default function Booking() {
                       key={svc.name}
                       onClick={() => selectService(svc.name, svc.price)}
                       className={cn('bk-svc-btn', booking.service === svc.name && 'bk-svc-btn--active')}
-                      style={{ animationDelay: `${i * 60}ms` }}
+                      style={{ animationDelay: `${i * 60}ms`, padding: 0 }}  // remove padding so image fills top
                     >
-                      <span className="bk-svc-btn__icon">{svc.icon}</span>
-                      <div className="bk-svc-btn__name">{svc.name}</div>
-                      <div className="bk-svc-btn__price">from {svc.price}</div>
+                      {/* Image thumbnail */}
+                      <div className="bk-svc-img-wrap">
+                        <img src={svc.image} alt={svc.name} className="bk-svc-img" />
+                        <div className="bk-svc-img-overlay" />
+                      </div>
+
+                      {/* Text below */}
+                      <div className="bk-svc-info">
+                        <div className="bk-svc-btn__name">{svc.name}</div>
+                        <div className="bk-svc-btn__price">from {svc.price}</div>
+                      </div>
                     </button>
                   ))}
-                </div>
+    </div>
 
-                <div className="bk-nav bk-nav--end">
-                  <button className="bk-btn bk-btn--next" onClick={() => goToStep(2)}>
-                    Next: Pick a Date →
-                  </button>
-                </div>
-              </div>
-            )}
+    <div className="bk-nav bk-nav--end">
+      <button className="bk-btn bk-btn--next" onClick={() => goToStep(2)}>
+        Next: Pick a Date →
+                      </button>
+                    </div>
+                  </div>
+                )}
 
             {/* ── Step 2: Date ── */}
             {currentStep === 2 && (
