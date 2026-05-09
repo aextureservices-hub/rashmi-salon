@@ -9,13 +9,14 @@ import { P, DIVIDER } from '../utils/palette';
 import '../styles/index.css';
 import second from '../assets/faceab.png';
 import thired from '../assets/nailsab.png';
+import first from "../assets/compare.jpg"
 import Brand from "../components/sections/Brand"
 
 const FEATURED_SERVICES = SERVICES.slice(0, 4);
 
 const TRANSFORMATIONS = [
   {
-    image: 'https://instagram.frpr5-1.fna.fbcdn.net/v/t51.82787-15/658821379_17932422384228007_9144910755359512669_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=105&ig_cache_key=Mzg2NDgxNDQyMDExOTkwMDY2Mg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEzNDl4MTgwMC5zZHIuQzMifQ%3D%3D&_nc_ohc=ZtIDGE-NDiAQ7kNvwHTNfnh&_nc_oc=AdpopLfS0jZHx35sHjbFrz0qa2yRJwJtX50AqTSUc1bXe4p9n8Sqs0y2SNFNYBIc5Ny9oOGlT6Rgp2yIltn_2tHe&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.frpr5-1.fna&_nc_gid=MDGZ79R9BqLPb5t8d74RvA&_nc_ss=7a22e&oh=00_Af4Xp9as2WL_zUd4Jr-qiuHHxjvPP26CpBM-AUD9gMnH7Q&oe=69FD0E0B',
+    image: first,
     title: 'Hair Transformation',
     subtitle: 'Balayage + Cut + Style',
   },

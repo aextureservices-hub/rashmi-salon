@@ -23,6 +23,7 @@ import pro2 from '../assets/p1.jpg';
 import pro3 from '../assets/p3.jpg';
 import pro4 from '../assets/p4.jpg';
 import pro5 from '../assets/p5.jpg';
+import pro6 from '../assets/p6.jpg';
 
 // ─── Navigation ────────────────────────────────────────────────────────────────
 export const NAV_LINKS: NavLink[] = [
@@ -46,7 +47,7 @@ export const SERVICES: Service[] = [
   {
     id: 'haircut',
     category: 'hair',
-    name: 'Haircut & Style',
+    name: 'Haircut',
     description: 'Precision cuts and expert styling for every hair type.',
     price: '₹499',
     priceValue: 499,
@@ -62,7 +63,7 @@ export const SERVICES: Service[] = [
     price: '₹999',
     priceValue: 999,
     icon: '🎨',
-    image: pro2,
+    image: pro6,
     gradient: 'linear-gradient(135deg,#FFF5EB,#FFD5B8)',
   },
   {
@@ -259,3 +260,140 @@ export const BOOKING_SERVICES = [
 
 // ─── Salon WhatsApp ────────────────────────────────────────────────────────────
 export const SALON_WHATSAPP = '917024409426';
+
+export const servicesData = [
+    {
+      category: 'Threading Services',
+      services: [
+        { name: 'Eyebrows + Upper Lip', price: '₹70' },
+        { name: 'Eyebrows',             price: '₹50' },
+        { name: 'Upper Lip',            price: '₹20' },
+        { name: 'Face Threading',       price: '₹250' },
+        { name: 'Chin',                 price: '₹50' },
+        { name: 'Side Lock Threading',  price: '₹50' },
+      ],
+    },
+    {
+      category: 'Waxing (Honey)',
+      services: [
+        { name: 'Underarms',     price: '₹50' },
+        { name: 'Arms Wax',      price: '₹200' },
+        { name: 'Half Leg Wax',  price: '₹200' },
+        { name: 'Full Leg Wax',  price: '₹400' },
+        { name: 'Front Wax',     price: '₹300' },
+        { name: 'Back Wax',      price: '₹300' },
+        { name: 'Full Body Wax', price: '₹1,500' },
+      ],
+    },
+    {
+      category: 'Waxing (Chocolate)',
+      services: [
+        { name: 'Underarms',    price: '₹100' },
+        { name: 'Hand Wax',     price: '₹250 - ₹300' },
+        { name: 'Half Leg Wax', price: '₹300' },
+        { name: 'Full Leg Wax', price: '₹600' },
+        { name: 'Arms Wax',     price: '₹400' },
+        { name: 'Back Wax',     price: '₹400' },
+      ],
+    },
+    {
+      category: 'Waxing (Rica)',
+      services: [
+        { name: 'Underarms',     price: '₹150' },
+        { name: 'Face Wax',      price: '₹350' },
+        { name: 'Hand Wax',      price: '₹450' },
+        { name: 'Half Leg Wax',  price: '₹400' },
+        { name: 'Full Leg Wax',  price: '₹800' },
+        { name: 'Arms Wax',      price: '₹500' },
+        { name: 'Back Wax',      price: '₹500' },
+        { name: 'Full Body Wax', price: '₹2,500' },
+        { name: 'Bikini Wax',    price: '₹1,200' },
+      ],
+    },
+    {
+      category: 'Facial Service',
+      services: [
+        { name: 'Raaga Facial',      price: '₹1,000' },
+        { name: 'Fruit Facial',      price: '₹1,000' },
+        { name: 'Lotus Facial',      price: '₹1,200' },
+        { name: 'Brillare Facial',   price: '₹1,500' },
+        { name: 'O3+ Facial',        price: '₹2,000' },
+        { name: 'Janssen Facial',    price: '₹3,000' },
+        { name: 'Skeyndor Facial',   price: '₹3,000' },
+        { name: 'Gold Facial',       price: '₹3,000' },
+        { name: 'Kiwi Facial',       price: '₹2,000' },
+        { name: 'Bio Enzyme Facial', price: '₹2,000' },
+      ],
+    },
+    {
+      category: 'Makeup Service',
+      services: [
+        { name: 'Party Makeup',    price: '₹2,000' },
+        { name: 'Bridal (MAC)',    price: '₹10,000' },
+        { name: 'HD Makeup',       price: '₹12,000' },
+        { name: 'Airbrush Makeup', price: '₹15,000' },
+      ],
+    },
+    {
+      category: 'Skeyndor Treatments',
+      services: [
+        { name: 'Aquatherm',        price: '₹3,500' },
+        { name: 'Power C+',         price: '₹4,000' },
+        { name: 'Power Oxygen',     price: '₹4,000' },
+        { name: 'Power Retinol',    price: '₹4,000' },
+        { name: 'Power Hyaluronic', price: '₹4,000' },
+        { name: 'Eternal',          price: '₹7,000' },
+        { name: 'Corrective',       price: '₹7,000' },
+        { name: 'Global Lift',      price: '₹7,000' },
+        { name: 'Timeless',         price: '₹10,000' },
+      ],
+    },
+    {
+      category: 'Pre-Bridal Treatment',
+      services: [
+        { name: 'Pre-Bridal Treatment', price: '₹5,000 - ₹25,000' },
+      ],
+    },
+    {
+      category: 'Spa & Hair Treatments',
+      services: [
+        { name: 'Hair Spa (starts)',      price: '₹800' },
+        { name: 'Treatment (starts)',     price: '₹1,500' },
+        { name: 'Illuvia Hair Treatment', price: '₹3,000' },
+        { name: 'Anti-Dandruff (starts)', price: '₹4,000' },
+        { name: 'Scalp Treatment',        price: '₹1,500' },
+        { name: 'Absolute Repair',        price: '₹1,500' },
+        { name: 'Molecular',              price: '₹3,000' },
+        { name: 'Botox (starts)',         price: '₹4,000' },
+        { name: 'Nanoplastia (starts)',   price: '₹4,000' },
+        { name: 'Keratin (starts)',       price: '₹4,000' },
+      ],
+    },
+    {
+      category: 'Hair Styling & Haircut',
+      services: [
+        { name: 'Hairstyle (starts)',      price: '₹500' },
+        { name: 'One-Length Haircut',      price: '₹200' },
+        { name: 'All Cuts with Hair Wash', price: '₹600' },
+      ],
+    },
+    {
+      category: 'Bleach Service',
+      services: [
+        { name: 'Face',        price: '₹300' },
+        { name: 'Face + Neck', price: '₹350' },
+        { name: 'Hand',        price: '₹400' },
+        { name: 'Leg (Full)',  price: '₹800' },
+        { name: 'Full Body',   price: '₹3,000' },
+      ],
+    },
+    {
+      category: 'D-Tan Service',
+      services: [
+        { name: 'Face D-Tan',      price: '₹250' },
+        { name: 'Hand D-Tan',      price: '₹500' },
+        { name: 'Full Leg D-Tan',  price: '₹1,000' },
+        { name: 'Full Body D-Tan', price: '₹3,000' },
+      ],
+    },
+  ];
