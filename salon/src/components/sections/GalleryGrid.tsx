@@ -42,18 +42,7 @@ export function GalleryCard({ item, index }: { item: GalleryItem; index: number 
             <img src={item.image} alt={item.label} loading="lazy" onError={() => setImgFailed(true)}
               style={{ width: '100%', height, objectFit: 'cover', display: 'block' }} />
           )}
-        </div>
-        <div className="pg-shimmer" />
-        <div className="pg-overlay">
-          <div style={{ display: 'inline-block', background: P.gradBrand, padding: '2px 10px', borderRadius: 100, marginBottom: 6 }}>
-            <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 10, letterSpacing: '1.8px', textTransform: 'uppercase', color: P.gold, fontWeight: 500 }}>
-              {item.category}
-            </span>
-          </div>
-          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 17, color: P.text, margin: 0, lineHeight: 1.25 }}>
-            {item.label}
-          </p>
-        </div>
+        </div> 
       </div>
     </div>
   );

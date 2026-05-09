@@ -17,7 +17,7 @@ import image12 from "../assets/image2.jpeg"
 import image13 from "../assets/img3.jpg"
 import image14 from "../assets/img2.jpg"
 import image15 from "../assets/img8.jpg"
-import image16 from "../assets/image5.jpeg"
+import image16 from "../assets/img22.jpg"
 import image17 from "../assets/image18.jpeg"
 import image18 from "../assets/img21.jpg"
 import image19 from "../assets/img6.jpg"
@@ -31,16 +31,16 @@ const GALLERY_ITEMS: GalleryItem[] = [
   { id: '5',  label: 'Dewy Skin Ritual',  category: 'Makeup',   image: image5, gradient: 'linear-gradient(135deg,#2E1628,#E8C9B8)' },
   { id: '6',  label: 'Smokey Romance',    category: 'Bridal',     image: image6, gradient: 'linear-gradient(135deg,#1C0F1A,#8B4865)' },
   { id: '7',  label: 'Luxe Nail Art',     category: 'Makeup',      image: image7, gradient: 'linear-gradient(135deg,#3D1A2E,#D4A96A)', tall: true },
-  { id: '8',  label: 'Royal Mehndi',      category: 'Bridal',     image: image8, gradient: 'linear-gradient(135deg,#2E1628,#6B3050)' },
+  { id: '8',  label: 'Royal Mehndi',      category: 'Makeup',     image: image8, gradient: 'linear-gradient(135deg,#2E1628,#6B3050)' },
   { id: '9',  label: 'Glass Skin Finish', category: 'Makeup',   image: image9, gradient: 'linear-gradient(135deg,#241020,#B8894E)' },
   { id: '10', label: 'Celestial Updo',    category: 'Bridal',  image: image10, gradient: 'linear-gradient(135deg,#2E1628,#D4A96A)', tall: true },
-  { id: '11', label: 'Balayage Dreams',   category: 'Makeup', image: image11, gradient: 'linear-gradient(135deg,#3D1A2E,#E8C9B8)' },
-  { id: '12', label: 'Heritage Look',     category: 'Bridal',     image: image12, gradient: 'linear-gradient(135deg,#1C0F1A,#8B4865)' },
+  { id: '11', label: 'Balayage Dreams',   category: 'Bridal', image: image11, gradient: 'linear-gradient(135deg,#3D1A2E,#E8C9B8)' },
+  { id: '12', label: 'Heritage Look',     category: 'Makeup',     image: image12, gradient: 'linear-gradient(135deg,#1C0F1A,#8B4865)' },
   { id: '13',  label: 'Golden Highlights', category: 'Makeup', image: image13, gradient: 'linear-gradient(135deg,#4A2010,#B8894E)' },
-  { id: '14',  label: 'Silk Drape Saree',  category: 'Bridal',    image: image14, gradient: 'linear-gradient(135deg,#1C0F1A,#D4A96A)', tall: true },
+  { id: '14',  label: 'Silk Drape Saree',  category: 'Makeup',    image: image14, gradient: 'linear-gradient(135deg,#1C0F1A,#D4A96A)', tall: true },
   { id: '15',  label: 'Dewy Skin Ritual',  category: 'Makeup',   image: image15, gradient: 'linear-gradient(135deg,#2E1628,#E8C9B8)' },
-  { id: '16',  label: 'Smokey Romance',    category: 'Bridal',     image: image16, gradient: 'linear-gradient(135deg,#1C0F1A,#8B4865)' },
-  { id: '17',  label: 'Luxe Nail Art',     category: 'Makeup',      image: image17, gradient: 'linear-gradient(135deg,#3D1A2E,#D4A96A)', tall: true },
+  { id: '16',  label: 'Smokey Romance',    category: 'Makeup',     image: image16, gradient: 'linear-gradient(135deg,#1C0F1A,#8B4865)' },
+  { id: '17',  label: 'Luxe Nail Art',     category: 'Bridal',      image: image17, gradient: 'linear-gradient(135deg,#3D1A2E,#D4A96A)', tall: true },
   { id: '18',  label: 'Royal Mehndi',      category: 'Bridal',     image: image18, gradient: 'linear-gradient(135deg,#2E1628,#6B3050)' },
   { id: '19',  label: 'Glass Skin Finish', category: 'Makeup',   image: image19, gradient: 'linear-gradient(135deg,#241020,#B8894E)' },
   { id: '20', label: 'Celestial Updo',    category: 'Bridal',  image: image20, gradient: 'linear-gradient(135deg,#2E1628,#D4A96A)', tall: true },
