@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom';
 import { useBooking } from '../hooks/useBooking';
 import { BookingSteps } from '../components/sections/BookingSteps';
 import { BookingCalendar } from '../components/sections/BookingCalendar';
-import { WhatsAppIcon } from '../components/ui/WhatsAppIcon';
 import { BOOKING_SERVICES } from '../utils/data';
 import { cn } from '../utils/helpers';
 import { P } from '../utils/palette';
@@ -371,7 +370,7 @@ export default function Booking() {
     currentStep, booking, details,
     selectService, selectDate, selectTime,
     updateDetails, goToStep, confirmBooking,
-    sendToWhatsApp, reset,
+     reset,
   } = useBooking();
 
   useEffect(() => {
