@@ -1,23 +1,24 @@
 import { useEffect, useState } from 'react';
 import { cn } from '../../utils/helpers';
+import { P } from '../../utils/palette';
 import '../../styles/index.css';
 
 const PETALS = Array.from({ length: 12 }, (_, i) => ({
   id: i,
   rotation: i * 30,
-  isPurple: i % 2 !== 0,
+  isGold: i % 2 !== 0,
   delay: i * 0.08,
 }));
 
 const SPARKLES = [
-  { size: 5, color: '#e879a0', left: '20%', top: '25%', dur: 3.1, delay: 0.2 },
-  { size: 3, color: '#a855f7', left: '78%', top: '18%', dur: 2.7, delay: 0.7 },
-  { size: 4, color: '#f9a8c9', left: '60%', top: '70%', dur: 3.5, delay: 1.1 },
-  { size: 3, color: '#c084e8', left: '35%', top: '80%', dur: 2.9, delay: 0.4 },
-  { size: 5, color: '#e879a0', left: '85%', top: '55%', dur: 3.3, delay: 1.4 },
-  { size: 3, color: '#a855f7', left: '12%', top: '65%', dur: 2.6, delay: 0.9 },
-  { size: 4, color: '#f9a8c9', left: '50%', top: '12%', dur: 3.8, delay: 0.1 },
-  { size: 3, color: '#c084e8', left: '90%', top: '30%', dur: 3.0, delay: 1.7 },
+  { size: 5, color: P.gold,      left: '20%', top: '25%', dur: 3.1, delay: 0.2 },
+  { size: 3, color: P.primary,   left: '78%', top: '18%', dur: 2.7, delay: 0.7 },
+  { size: 4, color: P.blush,     left: '60%', top: '70%', dur: 3.5, delay: 1.1 },
+  { size: 3, color: P.goldDark,  left: '35%', top: '80%', dur: 2.9, delay: 0.4 },
+  { size: 5, color: P.gold,      left: '85%', top: '55%', dur: 3.3, delay: 1.4 },
+  { size: 3, color: P.primary,   left: '12%', top: '65%', dur: 2.6, delay: 0.9 },
+  { size: 4, color: P.blush,     left: '50%', top: '12%', dur: 3.8, delay: 0.1 },
+  { size: 3, color: P.goldDark,  left: '90%', top: '30%', dur: 3.0, delay: 1.7 },
 ];
 
 export function Loader() {
@@ -39,8 +40,8 @@ export function Loader() {
           100% { opacity: 0.85; transform: translateX(-50%) translateY(-52px) scale(1); }
         }
         @keyframes heartPulse {
-          0%,100% { transform: translate(-50%, -50%) scale(1);    filter: drop-shadow(0 0 8px rgba(232,121,160,0.6)) drop-shadow(0 0 18px rgba(192,38,211,0.3)); }
-          50%      { transform: translate(-50%, -50%) scale(1.22); filter: drop-shadow(0 0 16px rgba(232,121,160,0.9)) drop-shadow(0 0 32px rgba(192,38,211,0.55)); }
+          0%,100% { transform: translate(-50%, -50%) scale(1);    filter: drop-shadow(0 0 8px rgba(212,169,106,0.6)) drop-shadow(0 0 18px rgba(139,72,101,0.4)); }
+          50%      { transform: translate(-50%, -50%) scale(1.22); filter: drop-shadow(0 0 16px rgba(212,169,106,0.9)) drop-shadow(0 0 32px rgba(139,72,101,0.6)); }
         }
         @keyframes spinRing {
           to { transform: translate(-50%,-50%) rotate(360deg); }
@@ -70,8 +71,8 @@ export function Loader() {
         }
         @keyframes decoExpand {
           0%   { opacity:0; transform:scale(0.4); }
-          50%  { opacity:.7; }
-          100% { opacity:.25; transform:scale(1); }
+          50%  { opacity:.5; }
+          100% { opacity:.15; transform:scale(1); }
         }
       `}</style>
 
@@ -81,18 +82,23 @@ export function Loader() {
           'transition-all duration-700',
           hidden && 'opacity-0 scale-105 pointer-events-none'
         )}
-        style={{ background: 'linear-gradient(135deg,#fff5f9 0%,#fdf0fa 40%,#f5eeff 100%)' }}
+        style={{
+          background: `radial-gradient(circle at top left, ${P.glow} 0%, transparent 35%),
+                       radial-gradient(circle at bottom right, ${P.glowGold} 0%, transparent 35%),
+                       ${P.bg}`,
+        }}
       >
         {/* Decorative expanding rings */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
           {[260, 340, 420].map((size, i) => (
             <div
               key={i}
-              className="absolute rounded-full border border-rose-300/20"
+              className="absolute rounded-full"
               style={{
                 width: size, height: size,
                 top: '50%', left: '50%',
                 transform: 'translate(-50%,-50%)',
+                border: `1px solid ${P.border}`,
                 animation: `decoExpand 2s ease-out ${0.3 + i * 0.25}s forwards`,
                 opacity: 0,
               }}
@@ -126,9 +132,9 @@ export function Loader() {
                 borderRadius: '50% 50% 50% 50% / 70% 70% 30% 30%',
                 top: '50%', left: '50%',
                 transformOrigin: 'bottom center',
-                background: p.isPurple
-                  ? 'linear-gradient(160deg,#c084e8,#a855f7)'
-                  : 'linear-gradient(160deg,#f9a8c9,#e879a0)',
+                background: p.isGold
+                  ? `linear-gradient(160deg, ${P.gold}, ${P.goldDark})`
+                  : `linear-gradient(160deg, ${P.blush}, ${P.primary})`,
                 transform: `translateX(-50%) rotate(${p.rotation}deg) translateY(-52px)`,
                 animation: `petalBloom 0.5s ease ${p.delay}s forwards`,
                 opacity: 0,
@@ -143,32 +149,23 @@ export function Loader() {
               width: 110, height: 110,
               top: '50%', left: '50%',
               border: '1.5px solid transparent',
-              background: 'linear-gradient(#fdf0f5,#fdf0f5) padding-box, linear-gradient(135deg,#e879a0,#a855f7,#e879a0) border-box',
+              background: `linear-gradient(${P.cardBgSolid},${P.cardBgSolid}) padding-box, ${P.gradGold} border-box`,
               animation: 'spinRing 2.4s linear infinite',
               transform: 'translate(-50%,-50%)',
             }}
           />
 
-          {/* Centre Heart ❤️ */}
+          {/* Centre Heart */}
           <div
             className="absolute"
-            style={{
-              top: '50%',
-              left: '50%',
-              animation: 'heartPulse 1.6s ease-in-out infinite',
-            }}
+            style={{ top: '50%', left: '50%', animation: 'heartPulse 1.6s ease-in-out infinite' }}
           >
-            <svg
-              width="40"
-              height="36"
-              viewBox="0 0 40 36"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg width="40" height="36" viewBox="0 0 40 36" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <radialGradient id="heartGrad" cx="35%" cy="30%" r="65%">
-                  <stop offset="0%"   stopColor="#fde8f3" />
-                  <stop offset="50%"  stopColor="#e879a0" />
-                  <stop offset="100%" stopColor="#c026d3" />
+                  <stop offset="0%"   stopColor={P.blush} />
+                  <stop offset="50%"  stopColor={P.gold} />
+                  <stop offset="100%" stopColor={P.primary} />
                 </radialGradient>
               </defs>
               <path
@@ -187,7 +184,7 @@ export function Loader() {
             fontWeight: 300,
             fontStyle: 'italic',
             letterSpacing: '0.02em',
-            background: 'linear-gradient(110deg,#be185d 0%,#7c3aed 50%,#be185d 100%)',
+            background: P.gradGold,
             backgroundSize: '200% auto',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
@@ -203,7 +200,7 @@ export function Loader() {
           className="mt-6 rounded-full overflow-hidden"
           style={{
             width: 180, height: 2,
-            background: 'rgba(190,24,93,0.12)',
+            background: P.border,
             animation: 'fadeSlideUp 0.6s ease 1.1s both',
           }}
         >
@@ -211,7 +208,7 @@ export function Loader() {
             className="h-full rounded-full"
             style={{
               width: 0,
-              background: 'linear-gradient(90deg,#e879a0,#a855f7,#e879a0)',
+              background: P.gradGold,
               backgroundSize: '200% auto',
               animation: 'loadBar 1.8s cubic-bezier(0.4,0,0.2,1) 1.2s forwards, shimmerBar 1.2s linear infinite',
             }}
@@ -226,7 +223,7 @@ export function Loader() {
             fontWeight: 300,
             letterSpacing: '0.28em',
             textTransform: 'uppercase',
-            color: 'rgba(190,24,93,0.6)',
+            color: P.textGoldMuted,
             marginTop: 14,
             animation: 'fadeSlideUp 0.6s ease 1.3s both, taglineBlink 1.8s ease-in-out 1.3s infinite',
           }}
