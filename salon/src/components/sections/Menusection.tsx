@@ -1,10 +1,19 @@
 import { useEffect } from 'react';
 import { P } from '../../utils/palette';
-import {servicesData} from '../../utils/data'
+import { servicesData } from '../../utils/data';
+
+interface Service {
+  name: string;
+  price: string;
+}
+
+interface CategoryBlockProps {
+  category: string;
+  services: Service[];
+}
 
 export function MenuCard() {
 
-  // Split categories evenly into two columns
   const mid = Math.ceil(servicesData.length / 2);
   const leftCol  = servicesData.slice(0, mid);
   const rightCol = servicesData.slice(mid);
@@ -21,14 +30,14 @@ export function MenuCard() {
     }
   }, []);
 
-  const CategoryBlock = ({ category, services }) => (
+  const CategoryBlock = ({ category, services }: CategoryBlockProps) => (
     <div className="rb-category">
       <div className="rb-cat-header">
         <span className="rb-cat-title">{category}</span>
         <div className="rb-cat-divider" />
       </div>
       <ul className="rb-list">
-        {services.map((item) => (
+        {services.map((item: Service) => (
           <li className="rb-item" key={item.name}>
             <span className="rb-name">{item.name}</span>
             <span className="rb-price">{item.price}</span>
@@ -62,8 +71,6 @@ export function MenuCard() {
           box-shadow: 0 20px 60px rgba(0,0,0,0.45), 0 0 40px ${P.glowGold};
           position: relative;
         }
-
-        /* Top header spanning full width */
         .rb-header {
           padding: 60px 50px 40px;
           border-bottom: 1px solid ${P.border};
@@ -94,8 +101,6 @@ export function MenuCard() {
           background: ${P.gradGold};
           margin: 18px auto 0;
         }
-
-        /* Two-column body */
         .rb-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
@@ -109,8 +114,6 @@ export function MenuCard() {
         .rb-column:first-child {
           border-right: 1px solid ${P.border};
         }
-
-        /* Per-category block */
         .rb-category {
           display: flex;
           flex-direction: column;
@@ -137,8 +140,6 @@ export function MenuCard() {
           background: ${P.border};
           border-radius: 999px;
         }
-
-        /* Service rows */
         .rb-list {
           display: flex;
           flex-direction: column;
@@ -177,7 +178,6 @@ export function MenuCard() {
           color: ${P.textGold};
           white-space: nowrap;
         }
-
         @media (max-width: 900px) {
           .rb-grid { grid-template-columns: 1fr; }
           .rb-column:first-child { border-right: none; border-bottom: 1px solid ${P.border}; }
@@ -207,14 +207,12 @@ export function MenuCard() {
       <section className="rb-wrapper" aria-label="Services Menu">
         <div className="rb-card">
 
-          {/* Shared header */}
           <div className="rb-header">
             <div className="rb-subtitle">Premium Beauty Studio</div>
             <div className="rb-title">Our Services</div>
             <div className="rb-divider" />
           </div>
 
-          {/* Two-column grid of all categories */}
           <div className="rb-grid">
             <div className="rb-column">
               {leftCol.map((cat) => (
