@@ -308,7 +308,7 @@ function CertificationCard({ cert, delay }: { cert: Certification; delay: number
           </div>
         )}
 
-        {/* Hover overlay — name + year */}
+        {/* Hover overlay — slides up from bottom */}
         <div className={`ab-cert-card__overlay ${hovered ? 'ab-cert-card__overlay--visible' : ''}`}>
           <div className="ab-cert-card__overlay-content">
             <span className="ab-cert-card__overlay-label">{cert.label}</span>
@@ -629,7 +629,8 @@ const CSS = `
 .ab-certs {
   padding: 100px 5%;
   background: linear-gradient(180deg, ${P.bg} 0%, ${P.section} 100%);
-  position: relative; overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 .ab-certs__blob {
   position: absolute; border-radius: 50%;
@@ -637,22 +638,28 @@ const CSS = `
   width: 500px; height: 500px;
   background: ${P.glowGold}; bottom: -10%; right: -5%; opacity: 0.15;
 }
-.ab-certs__inner { max-width: 1200px; margin: 0 auto; position: relative; }
-
-/* 2-column grid */
-.ab-certs__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+.ab-certs__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
 }
 
-/* Card — transparent, full image, relative for overlay */
+/* ── Centered 3-column grid ── */
+.ab-certs__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  gap: 20px;
+  justify-content: center;   /* centres the fixed-width columns horizontally */
+}
+
+/* Card — fixed size, no stretching */
 .ab-cert-card {
   position: relative;
-  border-radius: 18px;
+  width: 250px;
+  height: 350px;
+  border-radius: 10px;
   overflow: hidden;
   border: 1px solid ${P.border};
-  aspect-ratio: 4 / 3;
   cursor: pointer;
   transition: border-color 0.3s ease, box-shadow 0.35s ease, transform 0.35s ease;
 }
@@ -667,10 +674,10 @@ const CSS = `
   width: 100%; height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.5s cubic-bezier(0.22,1,0.36,1);
+  transition: transform 0.35s ease;
 }
 .ab-cert-card:hover .ab-cert-card__img {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 /* Fallback */
@@ -719,12 +726,16 @@ const CSS = `
   backdrop-filter: blur(6px);
 }
 
-@media (max-width: 600px) {
-  .ab-certs__grid { grid-template-columns: 1fr; }
-}
-
 /* ─── Responsive ─────────────────────────────────────────────────────────────── */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .ab-certs__grid {
+    grid-template-columns: repeat(2, 250px);
+  }
+}
+@media (max-width: 600px) {
+  .ab-certs__grid {
+    grid-template-columns: 250px;
+  }
   .ab-hero__inner { grid-template-columns: 1fr; gap: 40px; }
 }
 `;

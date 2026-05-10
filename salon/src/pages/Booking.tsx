@@ -502,7 +502,7 @@ export default function Booking() {
 
     <div className="bk-nav bk-nav--end">
       <button className="bk-btn bk-btn--next" onClick={() => goToStep(2)}>
-        Next: Pick a Date →
+        Next →
                       </button>
                     </div>
                   </div>
@@ -523,7 +523,7 @@ export default function Booking() {
 
                 <div className="bk-nav">
                   <button className="bk-btn bk-btn--back" onClick={() => goToStep(1)}>← Back</button>
-                  <button className="bk-btn bk-btn--next" onClick={() => goToStep(3)}>Next: Pick a Time →</button>
+                  <button className="bk-btn bk-btn--next" onClick={() => goToStep(3)}>Next →</button>
                 </div>
               </div>
             )}
@@ -553,7 +553,7 @@ export default function Booking() {
 
                 <div className="bk-nav">
                   <button className="bk-btn bk-btn--back" onClick={() => goToStep(2)}>← Back</button>
-                  <button className="bk-btn bk-btn--next" onClick={() => goToStep(4)}>Next: Your Details →</button>
+                  <button className="bk-btn bk-btn--next" onClick={() => goToStep(4)}>Next: →</button>
                 </div>
               </div>
             )}
@@ -616,7 +616,7 @@ export default function Booking() {
                 <div className="bk-nav">
                   <button className="bk-btn bk-btn--back" onClick={() => goToStep(3)}>← Back</button>
                   <button className="bk-btn bk-btn--next" onClick={handleConfirm}>
-                    Confirm & Send to WhatsApp →
+                    Confirm →
                   </button>
                 </div>
               </div>
