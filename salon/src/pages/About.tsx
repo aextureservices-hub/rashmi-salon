@@ -10,6 +10,7 @@ import image3 from "../assets/cetificate3.jpeg";
 import image4 from "../assets/cetificate4.jpeg";
 import image5 from "../assets/cetificate5.jpeg";
 import image7 from "../assets/cetificate8.jpeg";
+import image8 from "../assets/owner.jpeg"
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 interface TeamMember {
@@ -19,6 +20,7 @@ interface TeamMember {
   role: string;
   years: string;
   bio: string;
+  imageUrl: string;
 }
 
 interface Certification {
@@ -35,6 +37,7 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     id: 1,
     avatar: '👑',
+    imageUrl: image8,
     name: 'Rashmi Hariharno',
     role: 'Founder & Creative Director',
     years: '14+ Years',
@@ -245,19 +248,25 @@ function TeamSection() {
         </Fade>
 
         <div className="ab-team__grid">
-          {TEAM_MEMBERS.map((member, i) => (
-            <Fade key={member.id} delay={i * 100}>
-              <div className="ab-team-card">
-                <div className="ab-team-card__top-line" />
-                <div className="ab-team-card__avatar ab-float">{member.avatar}</div>
-                <h3 className="ab-team-card__name ab-display">{member.name}</h3>
-                <div className="ab-team-card__role">{member.role}</div>
-                <div className="ab-team-card__badge">{member.years} Experience</div>
-                <p className="ab-team-card__bio">{member.bio}</p>
-              </div>
-            </Fade>
-          ))}
-        </div>
+            {TEAM_MEMBERS.map((member, i) => (
+              <Fade key={member.id} delay={i * 100}>
+                <div className="ab-team-card">
+                  <div className="ab-team-card__top-line" />
+                  <div className="ab-team-card__avatar ab-float">
+                    <img
+                      src={member.imageUrl}
+                      alt={member.name}
+                      className="ab-team-card__avatar-img"
+                    />
+                  </div>
+                  <h3 className="ab-team-card__name ab-display">{member.name}</h3>
+                  <div className="ab-team-card__role">{member.role}</div>
+                  <div className="ab-team-card__badge">{member.years} Experience</div>
+                  <p className="ab-team-card__bio">{member.bio}</p>
+                </div>
+              </Fade>
+            ))}
+          </div>
       </div>
     </section>
   );
@@ -737,6 +746,13 @@ const CSS = `
     grid-template-columns: 250px;
   }
   .ab-hero__inner { grid-template-columns: 1fr; gap: 40px; }
+}
+
+.ab-team-card__avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; /* remove if the avatar is not circular */
 }
 `;
 

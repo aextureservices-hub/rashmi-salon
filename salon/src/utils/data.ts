@@ -18,12 +18,18 @@ import image6 from '../assets/bride.jpg'
 import image7 from '../assets/image1.jpg'
 import image8 from '../assets/bride2.jpeg'
 import image9 from '../assets/bride.jpg'
-import pro1 from '../assets/p2.jpg';
-import pro2 from '../assets/p1.jpg';
+
 import pro3 from '../assets/p3.jpg';
-import pro4 from '../assets/p4.jpg';
+
 import pro5 from '../assets/p5.jpg';
 import pro6 from '../assets/p6.jpg';
+import pro7 from '../assets/p7.jpg';
+import pro8 from '../assets/p8.jpg';
+import pro9 from '../assets/p9.jpg';
+import pro10 from '../assets/p10.jpg';
+import pro11 from '../assets/p11.jpg';
+import pro12 from '../assets/p12.jpg';
+import pro13 from '../assets/p13.jpg';
 
 // ─── Navigation ────────────────────────────────────────────────────────────────
 export const NAV_LINKS: NavLink[] = [
@@ -58,10 +64,10 @@ export const SERVICES: Service[] = [
   {
     id: 'makeup',
     category: 'makeup',
-    name: 'Makeup',
+    name: 'Party Makeup',
     description: 'Professional makeup application for any occasion.',
-    price: '₹999',
-    priceValue: 999,
+    price: '₹2000',
+    priceValue: 2000,
     icon: '🎨',
     image: pro6,
     gradient: 'linear-gradient(135deg,#FFF5EB,#FFD5B8)',
@@ -71,8 +77,8 @@ export const SERVICES: Service[] = [
     category: 'makeup',
     name: 'Bridal',
     description: 'Complete bridal transformation with trials.',
-    price: '₹4999',
-    priceValue: 4999,
+    price: '₹4999-25000',
+    priceValue: 5000,
     icon: '👰',
     image: pro5,
     gradient: 'linear-gradient(135deg,#FFF5EB,#FFD5B8)',
@@ -82,98 +88,76 @@ export const SERVICES: Service[] = [
     category: 'hair',
     name: 'Hair Spa',
     description: 'Deep conditioning treatment to repair and revitalize.',
-    price: '₹999',
-    priceValue: 999,
+    price: '₹800',
+    priceValue: 800,
     icon: '💆‍♀️',
-    image: pro4,
+    image: pro7,
     gradient: 'linear-gradient(135deg,#F5EEFF,#EDD5F9)',
   },
   {
-    id: 'glow-facial',
+    id: 'gold-facial',
     category: 'skin',
-    name: 'Glow Facial',
+    name: 'Gold Facial',
     description: 'Vitamin C and hyaluronic acid for instant radiance.',
-    price: '₹999',
-    priceValue: 999,
+    price: '₹3000',
+    priceValue: 3000,
     icon: '✨',
-    image: pro1,
+    image: pro8,
     gradient: 'linear-gradient(135deg,#F5EEFF,#EDD5F9)',
   },
   {
-    id: 'deep-cleanse',
+    id: 'body-wax',
     category: 'skin',
-    name: 'Deep Cleanse',
-    description: 'Thorough cleansing facial to unclog pores and clear blemishes.',
-    price: '₹799',
-    priceValue: 799,
+    name: 'Body Wax',
+    description: 'Smooth and silky skin with our professional body waxing service.',
+    price: '₹1500',
+    priceValue: 1500,
     icon: '🌿',
-    image: pro5,
+    image: pro9,
     gradient: 'linear-gradient(135deg,#EEFFF5,#D5F9E8)',
   },
   {
-    id: 'anti-aging',
+    id: 'face-tan',
     category: 'skin',
-    name: 'Anti-Aging Facial',
+    name: 'Face-D Tan',
     description: 'Collagen-boosting treatment to reduce fine lines.',
-    price: '₹1499',
-    priceValue: 1499,
+    price: '₹250',
+    priceValue: 250,
     icon: '🌹',
-    image: pro1,
+    image: pro10,
     gradient: 'linear-gradient(135deg,#FDEEF5,#F9D5E5)',
   },
   {
-    id: 'gel-mani',
-    category: 'nails',
-    name: 'Gel Manicure',
-    description: 'Long-lasting gel polish with premium finishes.',
-    price: '₹499',
-    priceValue: 499,
-    icon: '💅',
-    image: pro1,
-    gradient: 'linear-gradient(135deg,#FFF5EB,#FFE0C4)',
+    id: 'body-bleach',
+    category: 'skin',
+    name: 'Body Bleach',
+    description: 'Gentle bleaching treatment for a more even skin tone.',
+    price: '₹3000',
+    priceValue: 3000,
+    icon: '🌹',
+    image: pro11,
+    gradient: 'linear-gradient(135deg,#FDEEF5,#F9D5E5)',
   },
   {
-    id: 'nail-art',
-    category: 'nails',
-    name: 'Nail Art',
-    description: 'Custom designs from minimalist to elaborate.',
-    price: '₹699',
-    priceValue: 699,
-    icon: '🎨',
-    image: pro1,
-    gradient: 'linear-gradient(135deg,#F5EEFF,#EDD5F9)',
-  },
-  {
-    id: 'pedicure',
-    category: 'nails',
-    name: 'Pedicure Luxe',
-    description: 'Relaxing pedicure with exfoliation and massage.',
-    price: '₹699',
-    priceValue: 699,
-    icon: '🦶',
-    image: pro1,
-    gradient: 'linear-gradient(135deg,#EEFFF5,#D5F9E8)',
-  },
-  {
-    id: 'party-makeup',
+    id: 'hd-makeup',
     category: 'makeup',
-    name: 'Party Makeup',
+    name: 'HD Makeup',
     description: 'Stunning glam looks for every celebration.',
-    price: '₹1499',
-    priceValue: 1499,
+    price: '₹12000',
+    priceValue: 12000,
     icon: '💄',
-    image: pro1,
+    image: pro12,
     gradient: 'linear-gradient(135deg,#FDEEF5,#F9D5E5)',
   },
   {
-    id: 'bridal-makeup',
+    id: 'bridal-mac',
     category: 'makeup',
-    name: 'Bridal Makeup',
+    name: 'Bridal MAC',
     description: 'Complete bridal transformation with trials.',
-    price: '₹4999',
-    priceValue: 4999,
+    price: '₹10000',
+    priceValue: 10000,
     icon: '👰',
-    image: pro1,
+    image: pro13,
     gradient: 'linear-gradient(135deg,#FFF5EB,#FFD5B8)',
   },
 ];
@@ -250,12 +234,9 @@ export const CONTACT_INFO: ContactInfo[] = [
 
 // ─── Booking Services (for booking form) ──────────────────────────────────────
 export const BOOKING_SERVICES = [
-  { icon: '💇‍♀️', name: 'Hair Styling',   price: '₹499',  image: pro3 },
-  { icon: '✨',    name: 'Skin Facial',    price: '₹799',  image: pro1 },
-  { icon: '💅',    name: 'Nail Art',       price: '₹399',  image: pro1 },
-  { icon: '💄',    name: 'Bridal Makeup',  price: '₹2499', image: pro5 },
-  { icon: '🎨',    name: 'Hair Color',     price: '₹999',  image: pro4 },
-  { icon: '🦶',    name: 'Pedicure',       price: '₹499',  image: pro2 },
+  { icon: '💇‍♀️', name: 'Hair Cut',   price: '₹499',  image: pro3 },
+  { icon: '✨',    name: 'Gold Facial',    price: '₹3000',  image: pro8 },
+  { icon: '💄',    name: 'Bridal Makeup',  price: '₹4999-25000', image: pro5 },
 ];
 
 // ─── Salon WhatsApp ────────────────────────────────────────────────────────────

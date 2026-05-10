@@ -1,5 +1,5 @@
 // ─── Service Types ────────────────────────────────────────────────────────────
-export type ServiceCategory = 'hair' | 'skin' | 'nails' | 'makeup';
+export type ServiceCategory = 'hair' | 'skin'| 'makeup';
 
 export interface Service {
   id: string;
