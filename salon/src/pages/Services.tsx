@@ -18,7 +18,6 @@ const FILTER_TABS: FilterTab[] = [
   { label: 'All Services', value: 'all' },
   { label: '💇‍♀️ Hair',    value: 'hair' },
   { label: '✨ Skin',      value: 'skin' },
-  { label: '💅 Nails',    value: 'nails' },
   { label: '💄 Makeup',   value: 'makeup' },
 ];
 

@@ -13,7 +13,7 @@ const TIME_SLOTS = [
   { time: '10:00 AM' },
   { time: '11:00 AM' },
   { time: '12:00 PM'},
-  { time: '1:00 PM' },
+  { time: '1:00 PM',  unavailable: true },
   { time: '2:00 PM' },
   { time: '3:00 PM'},
   { time: '4:00 PM' },
