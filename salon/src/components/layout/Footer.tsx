@@ -4,6 +4,7 @@ import { openWhatsApp } from '../../utils/helpers';
 import { SALON_WHATSAPP } from '../../utils/data';
 import { P } from '../../utils/palette';
 import '../../styles/index.css';
+import logo2 from "../../assets/logo2.png"
 
 const footerServices = ['Hair Styling', 'Skin Care', 'Nail Art', 'Bridal Makeup'];
 const footerLinks = [
@@ -64,35 +65,14 @@ export function Footer() {
 
           {/* ── Brand ── */}
           <div>
-            {/* Logo wordmark */}
-            <Link
-              to="/"
-              className="block mb-1"
-              style={{
-                fontFamily: "'Playfair Display',serif",
-                fontSize: '28px',
-                fontWeight: 400,
-                fontStyle: 'italic',
-                background: P.gradGold,
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                letterSpacing: '0.04em',
-              }}
-            >
-              Rashmi
+            {/* Logo image */}
+            <Link to="/" className="block mb-4">
+              <img
+                src={logo2}
+                alt="Rashmi Beauty Salon & Spa"
+                style={{ width: 'auto', height: 'auto', objectFit: 'contain' }}
+              />
             </Link>
-            <p style={{
-              fontSize: '0.7rem',
-              color: P.gold,
-              letterSpacing: '0.2em',
-              textTransform: 'uppercase',
-              fontFamily: "'Outfit',sans-serif",
-              marginBottom: '1rem',
-              opacity: 0.8,
-            }}>
-              Beauty Salon & Spa
-            </p>
 
             <p style={{
               fontSize: '0.8125rem',

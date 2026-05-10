@@ -240,7 +240,7 @@ export const BOOKING_SERVICES = [
 ];
 
 // ─── Salon WhatsApp ────────────────────────────────────────────────────────────
-export const SALON_WHATSAPP = '917024409426';
+export const SALON_WHATSAPP = '918349100333';
 
 export const servicesData = [
     {

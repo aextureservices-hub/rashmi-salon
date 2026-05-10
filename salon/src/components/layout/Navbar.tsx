@@ -5,42 +5,17 @@ import { NAV_LINKS } from '../../utils/data';
 import { cn } from '../../utils/helpers';
 import { P } from '../../utils/palette';
 import '../../styles/index.css';
+import logo2 from "../../assets/logo2.png"
 
 function RBLogo() {
   return (
-    <svg
-      viewBox="0 0 80 64"
-      xmlns="http://www.w3.org/2000/svg"
-      className="w-14 h-11"
-      aria-label="Rashmi Beauty Salon & Spa"
-    >
-      <defs>
-        <linearGradient id="rbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%"   stopColor="#E8C9B8" />
-          <stop offset="45%"  stopColor="#D4A96A" />
-          <stop offset="100%" stopColor="#8B4865" />
-        </linearGradient>
-      </defs>
-
-      <text
-        x="4" y="52"
-        fontFamily="'Cormorant Garamond', 'Playfair Display', Georgia, serif"
-        fontSize="76" fontWeight="400" fontStyle="italic"
-        fill="url(#rbGrad)" letterSpacing="-2"
-      >R</text>
-
-      <text
-        x="32" y="52"
-        fontFamily="'Cormorant Garamond', 'Playfair Display', Georgia, serif"
-        fontSize="46" fontWeight="400" fontStyle="italic"
-        fill="url(#rbGrad)" opacity="0.92" letterSpacing="-2"
-      >B</text>
-
-      <line
-        x1="6" y1="57" x2="70" y2="57"
-        stroke="url(#rbGrad)" strokeWidth="0.8" opacity="0.5"
+    <div className="w-14 h-11 flex items-center justify-center" aria-label="Rashmi Beauty Salon & Spa">
+      <img
+        src={logo2}
+                alt="Rashmi Beauty Salon & Spa"
+                style={{ width: 'auto', height: 'auto', objectFit: 'contain' }}
       />
-    </svg>
+    </div>
   );
 }
 
